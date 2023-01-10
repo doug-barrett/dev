@@ -1,0 +1,302 @@
+steps:
+  V_SUPPLIER2-6248:
+    operation:
+      config:
+        insertStrategy: UNION
+        selectDistinct: false
+      database: ""
+      dependencies: []
+      deployEnabled: true
+      description: ""
+      isDataVault: false
+      isMultisource: false
+      locationID: ""
+      locationName: DWH
+      materializationType: view
+      metadata:
+        appliedNodeTests: []
+        columns:
+          - columnReference:
+              columnCounter: 62018
+              stepCounter: "6248"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: DIM_SUPPLIER_KEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 17355
+                    stepCounter: "1532"
+                transform: ""
+          - columnReference:
+              columnCounter: 62019
+              stepCounter: "6248"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_SUPPKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 17365
+                    stepCounter: "1532"
+                transform: ""
+          - columnReference:
+              columnCounter: 62020
+              stepCounter: "6248"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: SUPPLIER_NAME
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 17366
+                    stepCounter: "1532"
+                transform: ""
+          - columnReference:
+              columnCounter: 62021
+              stepCounter: "6248"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: NATION
+            nullable: "true"
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 17360
+                    stepCounter: "1532"
+                transform: ""
+          - columnReference:
+              columnCounter: 62022
+              stepCounter: "6248"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: REGION
+            nullable: "true"
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 17357
+                    stepCounter: "1532"
+                transform: ""
+          - columnReference:
+              columnCounter: 62023
+              stepCounter: "6248"
+            dataType: VARCHAR(15)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_PHONE
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 17361
+                    stepCounter: "1532"
+                transform: ""
+          - columnReference:
+              columnCounter: 62024
+              stepCounter: "6248"
+            dataType: NUMBER(12,2)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_ACCTBAL
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 17364
+                    stepCounter: "1532"
+                transform: ""
+          - columnReference:
+              columnCounter: 62025
+              stepCounter: "6248"
+            dataType: VARCHAR(255)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: SUPPLIER_NAME_CONCAT
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 17367
+                    stepCounter: "1532"
+                transform: ""
+          - columnReference:
+              columnCounter: 62026
+              stepCounter: "6248"
+            dataType: VARCHAR(40)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_ADDRESS
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 17368
+                    stepCounter: "1532"
+                transform: ""
+          - columnReference:
+              columnCounter: 62027
+              stepCounter: "6248"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_NATIONKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 17369
+                    stepCounter: "1532"
+                transform: ""
+          - columnReference:
+              columnCounter: 62028
+              stepCounter: "6248"
+            dataType: VARCHAR(50)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: MKT_SUPPLIER
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 17370
+                    stepCounter: "1532"
+                transform: ""
+          - columnReference:
+              columnCounter: 62029
+              stepCounter: "6248"
+            dataType: VARCHAR(101)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_COMMENT
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 17371
+                    stepCounter: "1532"
+                transform: ""
+          - columnReference:
+              columnCounter: 62030
+              stepCounter: "6248"
+            dataType: STRING
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: SUPPLIER_HASH
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 17372
+                    stepCounter: "1532"
+                transform: ""
+          - columnReference:
+              columnCounter: 62031
+              stepCounter: "6248"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: SYSTEM_VERSION
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 17373
+                    stepCounter: "1532"
+                transform: ""
+          - columnReference:
+              columnCounter: 62032
+              stepCounter: "6248"
+            dataType: VARCHAR
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: SYSTEM_CURRENT_FLAG
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 17374
+                    stepCounter: "1532"
+                transform: ""
+          - columnReference:
+              columnCounter: 62033
+              stepCounter: "6248"
+            dataType: TIMESTAMP
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: SYSTEM_START_DATE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 17375
+                    stepCounter: "1532"
+                transform: ""
+          - columnReference:
+              columnCounter: 62034
+              stepCounter: "6248"
+            dataType: TIMESTAMP
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: SYSTEM_END_DATE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 17376
+                    stepCounter: "1532"
+                transform: ""
+          - columnReference:
+              columnCounter: 62035
+              stepCounter: "6248"
+            dataType: TIMESTAMP
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: SYSTEM_CREATE_DATE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 17377
+                    stepCounter: "1532"
+                transform: ""
+          - columnReference:
+              columnCounter: 62036
+              stepCounter: "6248"
+            dataType: TIMESTAMP
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: SYSTEM_UPDATE_DATE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 17378
+                    stepCounter: "1532"
+                transform: ""
+        cteString: ""
+        enabledColumnTestIDs: []
+        sourceMapping:
+          - customSQL:
+              customSQL: ""
+            dependencies:
+              - locationName: DWH
+                nodeName: DIM_SUPPLIER
+            join:
+              joinCondition: FROM {{ ref('DWH', 'DIM_SUPPLIER') }} "DIM_SUPPLIER"
+            name: V_SUPPLIER2
+            noLinkRefs: []
+      name: V_SUPPLIER2
+      overrideSQL: false
+      schema: ""
+      sqlType: View
+      type: sql
+    stepCounter: "6248"
