@@ -191,21 +191,6 @@ steps:
                   - columnCounter: 3786
                     stepCounter: "57"
                 transform: ""
-          - columnReference:
-              columnCounter: 17372
-              stepCounter: "1532"
-            dataType: STRING
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            isChangeTracking: true
-            name: SUPPLIER_HASH
-            nullable: true
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 4638
-                    stepCounter: "57"
-                transform: ""
           - acceptedValues:
               strictMatch: true
               values: []

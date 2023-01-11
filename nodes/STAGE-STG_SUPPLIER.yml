@@ -139,7 +139,6 @@ steps:
           - isDistinct
         sourceMapping:
           - aliases:
-              DIM_SUPPLIER: "1532"
               SUPPLIER: "46"
             customSQL:
               customSQL: ""
@@ -149,13 +148,9 @@ steps:
             join:
               joinCondition: |
                 FROM {{ ref('SOURCE', 'SUPPLIER') }} "SUPPLIER"
-                LEFT JOIN {{ ref_no_link('DWH', 'DIM_SUPPLIER') }} "DIM_SUPPLIER"
-                ON "SUPPLIER"."S_SUPPKEY" = "DIM_SUPPLIER"."S_SUPPKEY"
-                WHERE "DIM_SUPPLIER"."S_SUPPKEY" IS NULL
+                
             name: STG_SUPPLIER
-            noLinkRefs:
-              - locationName: DWH
-                nodeName: DIM_SUPPLIER
+            noLinkRefs: []
       name: STG_SUPPLIER
       overrideSQL: false
       schema: ""
