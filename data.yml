@@ -10,8 +10,8 @@ locations:
         database: DOUG_DB
         schema: PROD_EDW
       "7":
-        database: DOUG_DB
-        schema: PROD_EDW
+        database: DOUG_DB_DEV
+        schema: PROD_DWH
   SOURCE:
     mappingDefinitions:
       "10":
@@ -32,7 +32,7 @@ locations:
         database: DOUG_DB
         schema: PROD_STG
       "7":
-        database: DOUG_DB
+        database: DOUG_DB_DEV
         schema: PROD_STG
   WEATHER:
     mappingDefinitions:
