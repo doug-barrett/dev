@@ -40,7 +40,7 @@ steps:
             columnReference:
               columnCounter: 593
               stepCounter: 57
-            dataType: VARCHAR(25)
+            dataType: VARCHAR(255)
             description: ""
             name: R_NAME
             nullable: "true"
@@ -55,7 +55,7 @@ steps:
             columnReference:
               columnCounter: 594
               stepCounter: 57
-            dataType: VARCHAR(152)
+            dataType: VARCHAR(255)
             description: ""
             name: R_COMMENT
             nullable: "true"
@@ -85,7 +85,7 @@ steps:
             columnReference:
               columnCounter: 603
               stepCounter: 57
-            dataType: VARCHAR(25)
+            dataType: VARCHAR(255)
             description: ""
             name: N_NAME
             nullable: "true"
@@ -101,7 +101,7 @@ steps:
               columnCounter: 2436
               stepCounter: "57"
             config: {}
-            dataType: VARCHAR(15)
+            dataType: VARCHAR(255)
             description: ""
             name: S_PHONE
             nullable: false
@@ -116,7 +116,7 @@ steps:
             columnReference:
               columnCounter: 605
               stepCounter: 57
-            dataType: VARCHAR(152)
+            dataType: VARCHAR(255)
             description: ""
             name: N_COMMENT
             nullable: "true"
@@ -179,7 +179,7 @@ steps:
               columnCounter: 2433
               stepCounter: "57"
             config: {}
-            dataType: VARCHAR(25)
+            dataType: VARCHAR(255)
             description: ""
             name: S_NAME
             nullable: false
@@ -211,7 +211,7 @@ steps:
               columnCounter: 2434
               stepCounter: "57"
             config: {}
-            dataType: VARCHAR(40)
+            dataType: VARCHAR(255)
             description: ""
             name: S_ADDRESS
             nullable: false
@@ -243,7 +243,7 @@ steps:
               columnCounter: 5519
               stepCounter: "57"
             config: {}
-            dataType: VARCHAR(50)
+            dataType: VARCHAR(255)
             description: ""
             name: MKT_SUPPLIER
             nullable: false
@@ -259,7 +259,7 @@ steps:
             columnReference:
               columnCounter: 3786
               stepCounter: "57"
-            dataType: VARCHAR(101)
+            dataType: VARCHAR(255)
             description: ""
             name: S_COMMENT
             nullable: true

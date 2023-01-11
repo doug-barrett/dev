@@ -47,7 +47,7 @@ steps:
           - columnReference:
               columnCounter: 17381
               stepCounter: "1533"
-            dataType: VARCHAR(25)
+            dataType: VARCHAR(255)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -61,7 +61,7 @@ steps:
           - columnReference:
               columnCounter: 17382
               stepCounter: "1533"
-            dataType: VARCHAR(152)
+            dataType: VARCHAR(255)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -89,7 +89,7 @@ steps:
           - columnReference:
               columnCounter: 17384
               stepCounter: "1533"
-            dataType: VARCHAR(25)
+            dataType: VARCHAR(255)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -103,7 +103,7 @@ steps:
           - columnReference:
               columnCounter: 17385
               stepCounter: "1533"
-            dataType: VARCHAR(15)
+            dataType: VARCHAR(255)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -117,7 +117,7 @@ steps:
           - columnReference:
               columnCounter: 17386
               stepCounter: "1533"
-            dataType: VARCHAR(152)
+            dataType: VARCHAR(255)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -173,7 +173,7 @@ steps:
           - columnReference:
               columnCounter: 17390
               stepCounter: "1533"
-            dataType: VARCHAR(25)
+            dataType: VARCHAR(255)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -201,7 +201,7 @@ steps:
           - columnReference:
               columnCounter: 17392
               stepCounter: "1533"
-            dataType: VARCHAR(40)
+            dataType: VARCHAR(255)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -229,7 +229,7 @@ steps:
           - columnReference:
               columnCounter: 17394
               stepCounter: "1533"
-            dataType: VARCHAR(50)
+            dataType: VARCHAR(255)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -243,7 +243,7 @@ steps:
           - columnReference:
               columnCounter: 17395
               stepCounter: "1533"
-            dataType: VARCHAR(101)
+            dataType: VARCHAR(255)
             description: ""
             hashColumns: []
             hashDetails: null

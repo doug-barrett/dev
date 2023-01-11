@@ -36,7 +36,7 @@ steps:
           - columnReference:
               columnCounter: 6315
               stepCounter: 553
-            dataType: VARCHAR(25)
+            dataType: VARCHAR(255)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -50,7 +50,7 @@ steps:
           - columnReference:
               columnCounter: 6316
               stepCounter: 553
-            dataType: VARCHAR(152)
+            dataType: VARCHAR(255)
             description: ""
             hashColumns: []
             hashDetails: null

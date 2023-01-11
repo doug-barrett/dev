@@ -48,7 +48,7 @@ steps:
             columnReference:
               columnCounter: 2173
               stepCounter: 186
-            dataType: VARCHAR(25)
+            dataType: VARCHAR(255)
             description: ""
             name: S_NAME
             nullable: false
@@ -63,7 +63,7 @@ steps:
             columnReference:
               columnCounter: 2174
               stepCounter: 186
-            dataType: VARCHAR(40)
+            dataType: VARCHAR(255)
             description: ""
             name: S_ADDRESS
             nullable: false
@@ -93,7 +93,7 @@ steps:
             columnReference:
               columnCounter: 2176
               stepCounter: 186
-            dataType: VARCHAR(15)
+            dataType: VARCHAR(255)
             description: ""
             name: S_PHONE
             nullable: false
@@ -124,7 +124,7 @@ steps:
             columnReference:
               columnCounter: 3785
               stepCounter: "186"
-            dataType: VARCHAR(101)
+            dataType: VARCHAR(255)
             description: ""
             name: S_COMMENT
             nullable: true

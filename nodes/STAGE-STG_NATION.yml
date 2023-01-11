@@ -34,7 +34,7 @@ steps:
           - columnReference:
               columnCounter: 589
               stepCounter: 56
-            dataType: VARCHAR(25)
+            dataType: VARCHAR(255)
             description: ""
             name: N_NAME
             nullable: false
@@ -58,7 +58,7 @@ steps:
           - columnReference:
               columnCounter: 591
               stepCounter: 56
-            dataType: VARCHAR(152)
+            dataType: VARCHAR(255)
             description: ""
             name: N_COMMENT
             nullable: true

@@ -54,7 +54,7 @@ steps:
           - columnReference:
               columnCounter: 17366
               stepCounter: "1532"
-            dataType: VARCHAR(25)
+            dataType: VARCHAR(255)
             description: Suppliers full name
             hashColumns: []
             hashDetails: null
@@ -68,7 +68,7 @@ steps:
           - columnReference:
               columnCounter: 17360
               stepCounter: "1532"
-            dataType: VARCHAR(25)
+            dataType: VARCHAR(255)
             description: Supplier Nation
             hashColumns: []
             hashDetails: null
@@ -82,7 +82,7 @@ steps:
           - columnReference:
               columnCounter: 17357
               stepCounter: "1532"
-            dataType: VARCHAR(25)
+            dataType: VARCHAR(255)
             description: Suppliers Region Name
             hashColumns: []
             hashDetails: null
@@ -96,7 +96,7 @@ steps:
           - columnReference:
               columnCounter: 17361
               stepCounter: "1532"
-            dataType: VARCHAR(15)
+            dataType: VARCHAR(255)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -138,7 +138,7 @@ steps:
           - columnReference:
               columnCounter: 17368
               stepCounter: "1532"
-            dataType: VARCHAR(40)
+            dataType: VARCHAR(255)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -166,7 +166,7 @@ steps:
           - columnReference:
               columnCounter: 17370
               stepCounter: "1532"
-            dataType: VARCHAR(50)
+            dataType: VARCHAR(255)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -180,7 +180,7 @@ steps:
           - columnReference:
               columnCounter: 17371
               stepCounter: "1532"
-            dataType: VARCHAR(101)
+            dataType: VARCHAR(255)
             description: ""
             hashColumns: []
             hashDetails: null

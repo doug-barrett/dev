@@ -47,7 +47,7 @@ steps:
           - columnReference:
               columnCounter: 17405
               stepCounter: "1534"
-            dataType: VARCHAR(25)
+            dataType: VARCHAR(255)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -61,7 +61,7 @@ steps:
           - columnReference:
               columnCounter: 17406
               stepCounter: "1534"
-            dataType: VARCHAR(152)
+            dataType: VARCHAR(255)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -89,7 +89,7 @@ steps:
           - columnReference:
               columnCounter: 17408
               stepCounter: "1534"
-            dataType: VARCHAR(25)
+            dataType: VARCHAR(255)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -103,7 +103,7 @@ steps:
           - columnReference:
               columnCounter: 17409
               stepCounter: "1534"
-            dataType: VARCHAR(15)
+            dataType: VARCHAR(255)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -117,7 +117,7 @@ steps:
           - columnReference:
               columnCounter: 17410
               stepCounter: "1534"
-            dataType: VARCHAR(152)
+            dataType: VARCHAR(255)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -173,7 +173,7 @@ steps:
           - columnReference:
               columnCounter: 17414
               stepCounter: "1534"
-            dataType: VARCHAR(25)
+            dataType: VARCHAR(255)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -201,7 +201,7 @@ steps:
           - columnReference:
               columnCounter: 17416
               stepCounter: "1534"
-            dataType: VARCHAR(40)
+            dataType: VARCHAR(255)
             description: ""
             hashColumns: []
             hashDetails: null
