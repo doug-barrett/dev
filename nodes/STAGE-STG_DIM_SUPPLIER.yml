@@ -13,21 +13,75 @@ steps:
       description: ""
       isDataVault: false
       isMultisource: false
-      locationID: 2
+      locationID: ""
       locationName: STAGE
       materializationType: table
       metadata:
         appliedNodeTests: []
         columns:
-          - appliedColumnTests:
-              hasNull: true
-              isDistinct: true
-            columnReference:
-              columnCounter: 2432
+          - columnReference:
+              columnCounter: 3877
               stepCounter: "57"
-            config: {}
             dataType: NUMBER(38,0)
             description: ""
+            hashColumns: []
+            hashDetails: null
+            name: N_NATIONKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 588
+                    stepCounter: "56"
+                transform: ""
+          - columnReference:
+              columnCounter: 3878
+              stepCounter: "57"
+            dataType: VARCHAR(255)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: N_NAME
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 589
+                    stepCounter: "56"
+                transform: ""
+          - columnReference:
+              columnCounter: 3879
+              stepCounter: "57"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: N_REGIONKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 590
+                    stepCounter: "56"
+                transform: ""
+          - columnReference:
+              columnCounter: 3880
+              stepCounter: "57"
+            dataType: VARCHAR(255)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: N_COMMENT
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 591
+                    stepCounter: "56"
+                transform: ""
+          - columnReference:
+              columnCounter: 3881
+              stepCounter: "57"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
             name: S_SUPPKEY
             nullable: false
             sourceColumnReferences:
@@ -35,15 +89,13 @@ steps:
                   - columnCounter: 2172
                     stepCounter: "186"
                 transform: ""
-          - appliedColumnTests:
-              hasNull: true
-              isDistinct: true
-            columnReference:
-              columnCounter: 2433
+          - columnReference:
+              columnCounter: 3882
               stepCounter: "57"
-            config: {}
             dataType: VARCHAR(255)
             description: ""
+            hashColumns: []
+            hashDetails: null
             name: S_NAME
             nullable: false
             sourceColumnReferences:
@@ -51,168 +103,13 @@ steps:
                   - columnCounter: 2173
                     stepCounter: "186"
                 transform: ""
-          - appliedColumnTests:
-              hasNull: true
-              isDistinct: false
-            columnReference:
-              columnCounter: 592
-              stepCounter: 57
-            dataType: NUMBER(38,0)
-            description: ""
-            name: R_REGIONKEY
-            nullable: "true"
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 6314
-                    stepCounter: "553"
-                transform: ""
-          - appliedColumnTests:
-              hasNull: false
-              isDistinct: false
-            columnReference:
-              columnCounter: 593
-              stepCounter: 57
-            dataType: VARCHAR(255)
-            description: ""
-            name: R_NAME
-            nullable: "true"
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 6315
-                    stepCounter: "553"
-                transform: ""
-          - appliedColumnTests:
-              hasNull: false
-              isDistinct: false
-            columnReference:
-              columnCounter: 594
-              stepCounter: 57
-            dataType: VARCHAR(255)
-            description: ""
-            name: R_COMMENT
-            nullable: "true"
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 6316
-                    stepCounter: "553"
-                transform: ""
-          - appliedColumnTests:
-              hasNull: false
-              isDistinct: false
-            columnReference:
-              columnCounter: 602
-              stepCounter: 57
-            dataType: NUMBER(38,0)
-            description: ""
-            name: N_NATIONKEY
-            nullable: "true"
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 588
-                    stepCounter: "56"
-                transform: ""
-          - appliedColumnTests:
-              hasNull: false
-              isDistinct: false
-            columnReference:
-              columnCounter: 603
-              stepCounter: 57
-            dataType: VARCHAR(255)
-            description: ""
-            name: N_NAME
-            nullable: "true"
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 589
-                    stepCounter: "56"
-                transform: ""
-          - appliedColumnTests:
-              hasNull: false
-              isDistinct: false
-            columnReference:
-              columnCounter: 2436
+          - columnReference:
+              columnCounter: 3883
               stepCounter: "57"
-            config: {}
             dataType: VARCHAR(255)
             description: ""
-            name: S_PHONE
-            nullable: false
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 2176
-                    stepCounter: "186"
-                transform: ""
-          - appliedColumnTests:
-              hasNull: false
-              isDistinct: false
-            columnReference:
-              columnCounter: 605
-              stepCounter: 57
-            dataType: VARCHAR(255)
-            description: ""
-            name: N_COMMENT
-            nullable: "true"
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 591
-                    stepCounter: "56"
-                transform: ""
-          - appliedColumnTests:
-              hasNull: false
-              isDistinct: false
-            columnReference:
-              columnCounter: 604
-              stepCounter: 57
-            dataType: NUMBER(38,0)
-            description: ""
-            name: N_REGIONKEY
-            nullable: "true"
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 590
-                    stepCounter: "56"
-                transform: ""
-          - appliedColumnTests:
-              hasNull: false
-              isDistinct: false
-            columnReference:
-              columnCounter: 2437
-              stepCounter: "57"
-            config: {}
-            dataType: NUMBER(12,2)
-            description: ""
-            name: S_ACCTBAL
-            nullable: false
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 2177
-                    stepCounter: "186"
-                transform: ""
-          - appliedColumnTests:
-              hasNull: true
-              isDistinct: true
-            columnReference:
-              columnCounter: 5033
-              stepCounter: "57"
-            config: {}
-            dataType: VARCHAR(255)
-            description: ""
-            name: SUPPLIER_NAME_CONCAT
-            nullable: false
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 2173
-                    stepCounter: "186"
-                transform: STG_SUPPLIER."S_NAME"||' '||STG_NATION."N_NAME"
-          - appliedColumnTests:
-              hasNull: false
-              isDistinct: false
-            columnReference:
-              columnCounter: 2434
-              stepCounter: "57"
-            config: {}
-            dataType: VARCHAR(255)
-            description: ""
+            hashColumns: []
+            hashDetails: null
             name: S_ADDRESS
             nullable: false
             sourceColumnReferences:
@@ -220,15 +117,13 @@ steps:
                   - columnCounter: 2174
                     stepCounter: "186"
                 transform: ""
-          - appliedColumnTests:
-              hasNull: false
-              isDistinct: false
-            columnReference:
-              columnCounter: 2435
+          - columnReference:
+              columnCounter: 3884
               stepCounter: "57"
-            config: {}
             dataType: NUMBER(38,0)
             description: ""
+            hashColumns: []
+            hashDetails: null
             name: S_NATIONKEY
             nullable: false
             sourceColumnReferences:
@@ -236,31 +131,41 @@ steps:
                   - columnCounter: 2175
                     stepCounter: "186"
                 transform: ""
-          - appliedColumnTests:
-              hasNull: false
-              isDistinct: false
-            columnReference:
-              columnCounter: 5519
+          - columnReference:
+              columnCounter: 3885
               stepCounter: "57"
-            config: {}
             dataType: VARCHAR(255)
             description: ""
-            name: MKT_SUPPLIER
+            hashColumns: []
+            hashDetails: null
+            name: S_PHONE
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 2176
+                    stepCounter: "186"
+                transform: ""
+          - columnReference:
+              columnCounter: 3886
+              stepCounter: "57"
+            dataType: NUMBER(12,2)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_ACCTBAL
             nullable: false
             sourceColumnReferences:
               - columnReferences:
                   - columnCounter: 2177
                     stepCounter: "186"
-                transform: CASE WHEN "STG_SUPPLIER"."S_ACCTBAL">0 THEN 'GOOD' ELSE 'BAD' END
-          - acceptedValues:
-              strictMatch: false
-              values: []
-            appliedColumnTests: {}
-            columnReference:
-              columnCounter: 3786
+                transform: ""
+          - columnReference:
+              columnCounter: 3887
               stepCounter: "57"
             dataType: VARCHAR(255)
             description: ""
+            hashColumns: []
+            hashDetails: null
             name: S_COMMENT
             nullable: true
             sourceColumnReferences:
@@ -268,10 +173,50 @@ steps:
                   - columnCounter: 3785
                     stepCounter: "186"
                 transform: ""
+          - columnReference:
+              columnCounter: 3888
+              stepCounter: "57"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: R_REGIONKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 6314
+                    stepCounter: "553"
+                transform: ""
+          - columnReference:
+              columnCounter: 3889
+              stepCounter: "57"
+            dataType: VARCHAR(255)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: R_NAME
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 6315
+                    stepCounter: "553"
+                transform: ""
+          - columnReference:
+              columnCounter: 3890
+              stepCounter: "57"
+            dataType: VARCHAR(255)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: R_COMMENT
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 6316
+                    stepCounter: "553"
+                transform: ""
         cteString: ""
-        enabledColumnTestIDs:
-          - hasNull
-          - isDistinct
+        enabledColumnTestIDs: []
         sourceMapping:
           - aliases:
               STG_NATION: "56"
@@ -287,13 +232,12 @@ steps:
               - locationName: STAGE
                 nodeName: STG_REGION
             join:
-              joinCondition: |
+              joinCondition: |-
                 FROM {{ ref('STAGE', 'STG_SUPPLIER') }} "STG_SUPPLIER"
                 INNER JOIN {{ ref('STAGE', 'STG_NATION') }} "STG_NATION"
-                ON STG_SUPPLIER.S_NATIONKEY= "STG_NATION".N_NATIONKEY
+                ON "STG_NATION"."N_NATIONKEY" = "STG_SUPPLIER"."S_NATIONKEY"
                 INNER JOIN {{ ref('STAGE', 'STG_REGION') }} "STG_REGION"
-                ON STG_NATION.N_REGIONKEY = STG_REGION.R_REGIONKEY
-                
+                ON "STG_NATION"."N_REGIONKEY" = "STG_REGION"."R_REGIONKEY"
             name: STG_DIM_SUPPLIER
             noLinkRefs: []
       name: STG_DIM_SUPPLIER

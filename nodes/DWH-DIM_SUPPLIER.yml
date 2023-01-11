@@ -48,7 +48,7 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 2432
+                  - columnCounter: 3881
                     stepCounter: "57"
                 transform: ""
           - columnReference:
@@ -62,7 +62,7 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 2433
+                  - columnCounter: 3882
                     stepCounter: "57"
                 transform: ""
           - columnReference:
@@ -76,7 +76,7 @@ steps:
             nullable: "true"
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 603
+                  - columnCounter: 3878
                     stepCounter: "57"
                 transform: ""
           - columnReference:
@@ -90,7 +90,7 @@ steps:
             nullable: "true"
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 593
+                  - columnCounter: 3889
                     stepCounter: "57"
                 transform: ""
           - columnReference:
@@ -104,7 +104,7 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 2436
+                  - columnCounter: 3885
                     stepCounter: "57"
                 transform: ""
           - columnReference:
@@ -118,21 +118,7 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 2437
-                    stepCounter: "57"
-                transform: ""
-          - columnReference:
-              columnCounter: 17367
-              stepCounter: "1532"
-            dataType: VARCHAR(255)
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            name: SUPPLIER_NAME_CONCAT
-            nullable: false
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 5033
+                  - columnCounter: 3886
                     stepCounter: "57"
                 transform: ""
           - columnReference:
@@ -146,7 +132,7 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 2434
+                  - columnCounter: 3883
                     stepCounter: "57"
                 transform: ""
           - columnReference:
@@ -160,21 +146,7 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 2435
-                    stepCounter: "57"
-                transform: ""
-          - columnReference:
-              columnCounter: 17370
-              stepCounter: "1532"
-            dataType: VARCHAR(255)
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            name: MKT_SUPPLIER
-            nullable: false
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 5519
+                  - columnCounter: 3884
                     stepCounter: "57"
                 transform: ""
           - columnReference:
@@ -188,7 +160,7 @@ steps:
             nullable: true
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 3786
+                  - columnCounter: 3887
                     stepCounter: "57"
                 transform: ""
           - acceptedValues:
@@ -302,7 +274,9 @@ steps:
         cteString: ""
         enabledColumnTestIDs: []
         sourceMapping:
-          - customSQL:
+          - aliases:
+              STG_DIM_SUPPLIER: "57"
+            customSQL:
               customSQL: ""
             dependencies:
               - locationName: STAGE
