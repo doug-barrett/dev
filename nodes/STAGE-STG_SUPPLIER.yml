@@ -56,7 +56,7 @@ steps:
               - columnReferences:
                   - columnCounter: 492
                     stepCounter: "46"
-                transform: upper("SUPPLIER"."S_NAME")
+                transform: ""
           - appliedColumnTests:
               hasNull: true
               isDistinct: false

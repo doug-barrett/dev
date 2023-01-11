@@ -80,7 +80,7 @@ steps:
               - columnReferences:
                   - columnCounter: 6315
                     stepCounter: "553"
-                transform: UPPER("STG_REGION"."R_NAME")
+                transform: ""
           - appliedColumnTests:
               hasNull: false
               isDistinct: false
@@ -293,6 +293,7 @@ steps:
                 ON STG_SUPPLIER.S_NATIONKEY= "STG_NATION".N_NATIONKEY
                 INNER JOIN {{ ref('STAGE', 'STG_REGION') }} "STG_REGION"
                 ON STG_NATION.N_REGIONKEY = STG_REGION.R_REGIONKEY
+                
             name: STG_DIM_SUPPLIER
             noLinkRefs: []
       name: STG_DIM_SUPPLIER
