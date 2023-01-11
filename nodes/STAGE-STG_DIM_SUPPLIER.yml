@@ -1,5 +1,5 @@
 steps:
-  STG_DIM_SUPPLIER-57:
+  STG_DIM_SUPPLIER-61:
     operation:
       config:
         insertStrategy: INSERT
@@ -20,64 +20,8 @@ steps:
         appliedNodeTests: []
         columns:
           - columnReference:
-              columnCounter: 3877
-              stepCounter: "57"
-            dataType: NUMBER(38,0)
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            name: N_NATIONKEY
-            nullable: false
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 588
-                    stepCounter: "56"
-                transform: ""
-          - columnReference:
-              columnCounter: 3878
-              stepCounter: "57"
-            dataType: VARCHAR(255)
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            name: N_NAME
-            nullable: false
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 589
-                    stepCounter: "56"
-                transform: ""
-          - columnReference:
-              columnCounter: 3879
-              stepCounter: "57"
-            dataType: NUMBER(38,0)
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            name: N_REGIONKEY
-            nullable: false
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 590
-                    stepCounter: "56"
-                transform: ""
-          - columnReference:
-              columnCounter: 3880
-              stepCounter: "57"
-            dataType: VARCHAR(255)
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            name: N_COMMENT
-            nullable: true
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 591
-                    stepCounter: "56"
-                transform: ""
-          - columnReference:
-              columnCounter: 3881
-              stepCounter: "57"
+              columnCounter: 3908
+              stepCounter: "61"
             dataType: NUMBER(38,0)
             description: ""
             hashColumns: []
@@ -86,13 +30,13 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 2172
-                    stepCounter: "186"
+                  - columnCounter: 3894
+                    stepCounter: "59"
                 transform: ""
           - columnReference:
-              columnCounter: 3882
-              stepCounter: "57"
-            dataType: VARCHAR(255)
+              columnCounter: 3909
+              stepCounter: "61"
+            dataType: VARCHAR(25)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -100,13 +44,27 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 2173
-                    stepCounter: "186"
+                  - columnCounter: 3895
+                    stepCounter: "59"
                 transform: ""
           - columnReference:
-              columnCounter: 3883
-              stepCounter: "57"
+              columnCounter: 3982
+              stepCounter: "61"
             dataType: VARCHAR(255)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: SUPPLIER_NAME_NATION
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3895
+                    stepCounter: "59"
+                transform: "\"STG_SUPPLIER\".\"S_NAME\" || ' ' || \"STG_NATION\".\"N_NAME\""
+          - columnReference:
+              columnCounter: 3910
+              stepCounter: "61"
+            dataType: VARCHAR(40)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -114,12 +72,12 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 2174
-                    stepCounter: "186"
+                  - columnCounter: 3896
+                    stepCounter: "59"
                 transform: ""
           - columnReference:
-              columnCounter: 3884
-              stepCounter: "57"
+              columnCounter: 3911
+              stepCounter: "61"
             dataType: NUMBER(38,0)
             description: ""
             hashColumns: []
@@ -128,13 +86,13 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 2175
-                    stepCounter: "186"
+                  - columnCounter: 3897
+                    stepCounter: "59"
                 transform: ""
           - columnReference:
-              columnCounter: 3885
-              stepCounter: "57"
-            dataType: VARCHAR(255)
+              columnCounter: 3912
+              stepCounter: "61"
+            dataType: VARCHAR(15)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -142,12 +100,12 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 2176
-                    stepCounter: "186"
+                  - columnCounter: 3898
+                    stepCounter: "59"
                 transform: ""
           - columnReference:
-              columnCounter: 3886
-              stepCounter: "57"
+              columnCounter: 3913
+              stepCounter: "61"
             dataType: NUMBER(12,2)
             description: ""
             hashColumns: []
@@ -156,13 +114,13 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 2177
-                    stepCounter: "186"
+                  - columnCounter: 3899
+                    stepCounter: "59"
                 transform: ""
           - columnReference:
-              columnCounter: 3887
-              stepCounter: "57"
-            dataType: VARCHAR(255)
+              columnCounter: 3914
+              stepCounter: "61"
+            dataType: VARCHAR(101)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -170,12 +128,68 @@ steps:
             nullable: true
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 3785
-                    stepCounter: "186"
+                  - columnCounter: 3900
+                    stepCounter: "59"
                 transform: ""
           - columnReference:
-              columnCounter: 3888
-              stepCounter: "57"
+              columnCounter: 3915
+              stepCounter: "61"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: N_NATIONKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3901
+                    stepCounter: "60"
+                transform: ""
+          - columnReference:
+              columnCounter: 3916
+              stepCounter: "61"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: N_NAME
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3902
+                    stepCounter: "60"
+                transform: ""
+          - columnReference:
+              columnCounter: 3917
+              stepCounter: "61"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: N_REGIONKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3903
+                    stepCounter: "60"
+                transform: ""
+          - columnReference:
+              columnCounter: 3918
+              stepCounter: "61"
+            dataType: VARCHAR(152)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: N_COMMENT
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3904
+                    stepCounter: "60"
+                transform: ""
+          - columnReference:
+              columnCounter: 3905
+              stepCounter: "61"
             dataType: NUMBER(38,0)
             description: ""
             hashColumns: []
@@ -184,13 +198,13 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 6314
-                    stepCounter: "553"
+                  - columnCounter: 3891
+                    stepCounter: "58"
                 transform: ""
           - columnReference:
-              columnCounter: 3889
-              stepCounter: "57"
-            dataType: VARCHAR(255)
+              columnCounter: 3906
+              stepCounter: "61"
+            dataType: VARCHAR(25)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -198,13 +212,13 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 6315
-                    stepCounter: "553"
+                  - columnCounter: 3892
+                    stepCounter: "58"
                 transform: ""
           - columnReference:
-              columnCounter: 3890
-              stepCounter: "57"
-            dataType: VARCHAR(255)
+              columnCounter: 3907
+              stepCounter: "61"
+            dataType: VARCHAR(152)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -212,32 +226,32 @@ steps:
             nullable: true
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 6316
-                    stepCounter: "553"
+                  - columnCounter: 3893
+                    stepCounter: "58"
                 transform: ""
         cteString: ""
         enabledColumnTestIDs: []
         sourceMapping:
           - aliases:
-              STG_NATION: "56"
-              STG_REGION: "553"
-              STG_SUPPLIER: "186"
+              STG_NATION: "60"
+              STG_REGION: "58"
+              STG_SUPPLIER: "59"
             customSQL:
               customSQL: ""
             dependencies:
               - locationName: STAGE
-                nodeName: STG_NATION
+                nodeName: STG_REGION
               - locationName: STAGE
                 nodeName: STG_SUPPLIER
               - locationName: STAGE
-                nodeName: STG_REGION
+                nodeName: STG_NATION
             join:
-              joinCondition: |-
+              joinCondition: |
                 FROM {{ ref('STAGE', 'STG_SUPPLIER') }} "STG_SUPPLIER"
                 INNER JOIN {{ ref('STAGE', 'STG_NATION') }} "STG_NATION"
-                ON "STG_NATION"."N_NATIONKEY" = "STG_SUPPLIER"."S_NATIONKEY"
+                ON "STG_SUPPLIER"."S_NATIONKEY" = "STG_NATION"."N_NATIONKEY"
                 INNER JOIN {{ ref('STAGE', 'STG_REGION') }} "STG_REGION"
-                ON "STG_NATION"."N_REGIONKEY" = "STG_REGION"."R_REGIONKEY"
+                ON "STG_REGION"."R_REGIONKEY" =  "STG_NATION"."N_REGIONKEY"
             name: STG_DIM_SUPPLIER
             noLinkRefs: []
       name: STG_DIM_SUPPLIER
@@ -245,4 +259,4 @@ steps:
       schema: ""
       sqlType: Stage
       type: sql
-    stepCounter: "57"
+    stepCounter: "61"

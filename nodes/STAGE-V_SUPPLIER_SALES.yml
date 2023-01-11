@@ -1,12 +1,9 @@
 steps:
-  STG_SUPPLIER-59:
+  V_SUPPLIER_SALES-63:
     operation:
       config:
-        insertStrategy: INSERT
-        postSQL: ""
-        preSQL: ""
-        testsEnabled: true
-        truncateBefore: true
+        insertStrategy: UNION
+        selectDistinct: false
       database: ""
       dependencies: []
       deployEnabled: true
@@ -15,13 +12,27 @@ steps:
       isMultisource: false
       locationID: ""
       locationName: STAGE
-      materializationType: table
+      materializationType: view
       metadata:
         appliedNodeTests: []
         columns:
           - columnReference:
-              columnCounter: 3894
-              stepCounter: "59"
+              columnCounter: 3940
+              stepCounter: "63"
+            dataType: NUMBER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: DIM_DIM_SUPPLIER_KEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3919
+                    stepCounter: "62"
+                transform: ""
+          - columnReference:
+              columnCounter: 3941
+              stepCounter: "63"
             dataType: NUMBER(38,0)
             description: ""
             hashColumns: []
@@ -30,12 +41,12 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 491
-                    stepCounter: "46"
+                  - columnCounter: 3920
+                    stepCounter: "62"
                 transform: ""
           - columnReference:
-              columnCounter: 3895
-              stepCounter: "59"
+              columnCounter: 3942
+              stepCounter: "63"
             dataType: VARCHAR(25)
             description: ""
             hashColumns: []
@@ -44,12 +55,12 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 492
-                    stepCounter: "46"
+                  - columnCounter: 3921
+                    stepCounter: "62"
                 transform: ""
           - columnReference:
-              columnCounter: 3896
-              stepCounter: "59"
+              columnCounter: 3943
+              stepCounter: "63"
             dataType: VARCHAR(40)
             description: ""
             hashColumns: []
@@ -58,26 +69,12 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 493
-                    stepCounter: "46"
+                  - columnCounter: 3922
+                    stepCounter: "62"
                 transform: ""
           - columnReference:
-              columnCounter: 3897
-              stepCounter: "59"
-            dataType: NUMBER(38,0)
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            name: S_NATIONKEY
-            nullable: false
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 494
-                    stepCounter: "46"
-                transform: ""
-          - columnReference:
-              columnCounter: 3898
-              stepCounter: "59"
+              columnCounter: 3945
+              stepCounter: "63"
             dataType: VARCHAR(15)
             description: ""
             hashColumns: []
@@ -86,26 +83,12 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 495
-                    stepCounter: "46"
+                  - columnCounter: 3924
+                    stepCounter: "62"
                 transform: ""
           - columnReference:
-              columnCounter: 3899
-              stepCounter: "59"
-            dataType: NUMBER(12,2)
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            name: S_ACCTBAL
-            nullable: false
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 496
-                    stepCounter: "46"
-                transform: ""
-          - columnReference:
-              columnCounter: 3900
-              stepCounter: "59"
+              columnCounter: 3947
+              stepCounter: "63"
             dataType: VARCHAR(101)
             description: ""
             hashColumns: []
@@ -114,8 +97,36 @@ steps:
             nullable: true
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 497
-                    stepCounter: "46"
+                  - columnCounter: 3926
+                    stepCounter: "62"
+                transform: ""
+          - columnReference:
+              columnCounter: 3949
+              stepCounter: "63"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: N_NAME
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3928
+                    stepCounter: "62"
+                transform: ""
+          - columnReference:
+              columnCounter: 3953
+              stepCounter: "63"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: R_NAME
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3932
+                    stepCounter: "62"
                 transform: ""
         cteString: ""
         enabledColumnTestIDs: []
@@ -123,15 +134,15 @@ steps:
           - customSQL:
               customSQL: ""
             dependencies:
-              - locationName: SOURCE
-                nodeName: SUPPLIER
+              - locationName: STAGE
+                nodeName: DIM_SUPPLIER
             join:
-              joinCondition: FROM {{ ref('SOURCE', 'SUPPLIER') }} "SUPPLIER"
-            name: STG_SUPPLIER
+              joinCondition: FROM {{ ref('STAGE', 'DIM_SUPPLIER') }} "DIM_SUPPLIER"
+            name: V_SUPPLIER_SALES
             noLinkRefs: []
-      name: STG_SUPPLIER
+      name: V_SUPPLIER_SALES
       overrideSQL: false
       schema: ""
-      sqlType: Stage
+      sqlType: View
       type: sql
-    stepCounter: "59"
+    stepCounter: "63"

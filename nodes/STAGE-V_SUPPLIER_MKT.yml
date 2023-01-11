@@ -1,5 +1,5 @@
 steps:
-  V_SUPPLIER_MKT-1533:
+  V_SUPPLIER_MKT-64:
     operation:
       config:
         insertStrategy: UNION
@@ -11,14 +11,14 @@ steps:
       isDataVault: false
       isMultisource: false
       locationID: ""
-      locationName: DWH
+      locationName: STAGE
       materializationType: view
       metadata:
         appliedNodeTests: []
         columns:
           - columnReference:
-              columnCounter: 17379
-              stepCounter: "1533"
+              columnCounter: 3961
+              stepCounter: "64"
             dataType: NUMBER
             description: ""
             hashColumns: []
@@ -27,138 +27,12 @@ steps:
             nullable: true
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 17355
-                    stepCounter: "1532"
+                  - columnCounter: 3919
+                    stepCounter: "62"
                 transform: ""
           - columnReference:
-              columnCounter: 17380
-              stepCounter: "1533"
-            dataType: NUMBER(38,0)
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            name: R_REGIONKEY
-            nullable: "true"
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 17356
-                    stepCounter: "1532"
-                transform: ""
-          - columnReference:
-              columnCounter: 17381
-              stepCounter: "1533"
-            dataType: VARCHAR(255)
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            name: R_NAME
-            nullable: "true"
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 17357
-                    stepCounter: "1532"
-                transform: ""
-          - columnReference:
-              columnCounter: 17382
-              stepCounter: "1533"
-            dataType: VARCHAR(255)
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            name: R_COMMENT
-            nullable: "true"
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 17358
-                    stepCounter: "1532"
-                transform: ""
-          - columnReference:
-              columnCounter: 17383
-              stepCounter: "1533"
-            dataType: NUMBER(38,0)
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            name: N_NATIONKEY
-            nullable: "true"
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 17359
-                    stepCounter: "1532"
-                transform: ""
-          - columnReference:
-              columnCounter: 17384
-              stepCounter: "1533"
-            dataType: VARCHAR(255)
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            name: N_NAME
-            nullable: "true"
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 17360
-                    stepCounter: "1532"
-                transform: ""
-          - columnReference:
-              columnCounter: 17385
-              stepCounter: "1533"
-            dataType: VARCHAR(255)
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            name: S_PHONE
-            nullable: false
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 17361
-                    stepCounter: "1532"
-                transform: ""
-          - columnReference:
-              columnCounter: 17386
-              stepCounter: "1533"
-            dataType: VARCHAR(255)
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            name: N_COMMENT
-            nullable: "true"
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 17362
-                    stepCounter: "1532"
-                transform: ""
-          - columnReference:
-              columnCounter: 17387
-              stepCounter: "1533"
-            dataType: NUMBER(38,0)
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            name: N_REGIONKEY
-            nullable: "true"
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 17363
-                    stepCounter: "1532"
-                transform: ""
-          - columnReference:
-              columnCounter: 17388
-              stepCounter: "1533"
-            dataType: NUMBER(12,2)
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            name: S_ACCTBAL
-            nullable: false
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 17364
-                    stepCounter: "1532"
-                transform: ""
-          - columnReference:
-              columnCounter: 17389
-              stepCounter: "1533"
+              columnCounter: 3962
+              stepCounter: "64"
             dataType: NUMBER(38,0)
             description: ""
             hashColumns: []
@@ -167,13 +41,13 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 17365
-                    stepCounter: "1532"
+                  - columnCounter: 3920
+                    stepCounter: "62"
                 transform: ""
           - columnReference:
-              columnCounter: 17390
-              stepCounter: "1533"
-            dataType: VARCHAR(255)
+              columnCounter: 3963
+              stepCounter: "64"
+            dataType: VARCHAR(25)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -181,27 +55,13 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 17366
-                    stepCounter: "1532"
+                  - columnCounter: 3921
+                    stepCounter: "62"
                 transform: ""
           - columnReference:
-              columnCounter: 17391
-              stepCounter: "1533"
-            dataType: VARCHAR(255)
-            description: ""
-            hashColumns: []
-            hashDetails: null
-            name: SUPPLIER_NAME_CONCAT
-            nullable: false
-            sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 17367
-                    stepCounter: "1532"
-                transform: ""
-          - columnReference:
-              columnCounter: 17392
-              stepCounter: "1533"
-            dataType: VARCHAR(255)
+              columnCounter: 3964
+              stepCounter: "64"
+            dataType: VARCHAR(40)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -209,12 +69,12 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 17368
-                    stepCounter: "1532"
+                  - columnCounter: 3922
+                    stepCounter: "62"
                 transform: ""
           - columnReference:
-              columnCounter: 17393
-              stepCounter: "1533"
+              columnCounter: 3965
+              stepCounter: "64"
             dataType: NUMBER(38,0)
             description: ""
             hashColumns: []
@@ -223,27 +83,41 @@ steps:
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 17369
-                    stepCounter: "1532"
+                  - columnCounter: 3923
+                    stepCounter: "62"
                 transform: ""
           - columnReference:
-              columnCounter: 17394
-              stepCounter: "1533"
-            dataType: VARCHAR(255)
+              columnCounter: 3966
+              stepCounter: "64"
+            dataType: VARCHAR(15)
             description: ""
             hashColumns: []
             hashDetails: null
-            name: MKT_SUPPLIER
+            name: S_PHONE
             nullable: false
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 17370
-                    stepCounter: "1532"
+                  - columnCounter: 3924
+                    stepCounter: "62"
                 transform: ""
           - columnReference:
-              columnCounter: 17395
-              stepCounter: "1533"
-            dataType: VARCHAR(255)
+              columnCounter: 3967
+              stepCounter: "64"
+            dataType: NUMBER(12,2)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: S_ACCTBAL
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3925
+                    stepCounter: "62"
+                transform: ""
+          - columnReference:
+              columnCounter: 3968
+              stepCounter: "64"
+            dataType: VARCHAR(101)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -251,26 +125,110 @@ steps:
             nullable: true
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 17371
-                    stepCounter: "1532"
+                  - columnCounter: 3926
+                    stepCounter: "62"
                 transform: ""
           - columnReference:
-              columnCounter: 17396
-              stepCounter: "1533"
-            dataType: STRING
+              columnCounter: 3969
+              stepCounter: "64"
+            dataType: NUMBER(38,0)
             description: ""
             hashColumns: []
             hashDetails: null
-            name: SUPPLIER_HASH
+            name: N_NATIONKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3927
+                    stepCounter: "62"
+                transform: ""
+          - columnReference:
+              columnCounter: 3970
+              stepCounter: "64"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: N_NAME
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3928
+                    stepCounter: "62"
+                transform: ""
+          - columnReference:
+              columnCounter: 3971
+              stepCounter: "64"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: N_REGIONKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3929
+                    stepCounter: "62"
+                transform: ""
+          - columnReference:
+              columnCounter: 3972
+              stepCounter: "64"
+            dataType: VARCHAR(152)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: N_COMMENT
             nullable: true
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 17372
-                    stepCounter: "1532"
+                  - columnCounter: 3930
+                    stepCounter: "62"
                 transform: ""
           - columnReference:
-              columnCounter: 17397
-              stepCounter: "1533"
+              columnCounter: 3973
+              stepCounter: "64"
+            dataType: NUMBER(38,0)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: R_REGIONKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3931
+                    stepCounter: "62"
+                transform: ""
+          - columnReference:
+              columnCounter: 3974
+              stepCounter: "64"
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: R_NAME
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3932
+                    stepCounter: "62"
+                transform: ""
+          - columnReference:
+              columnCounter: 3975
+              stepCounter: "64"
+            dataType: VARCHAR(152)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: R_COMMENT
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3933
+                    stepCounter: "62"
+                transform: ""
+          - columnReference:
+              columnCounter: 3976
+              stepCounter: "64"
             dataType: NUMBER
             description: ""
             hashColumns: []
@@ -279,12 +237,12 @@ steps:
             nullable: true
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 17373
-                    stepCounter: "1532"
+                  - columnCounter: 3934
+                    stepCounter: "62"
                 transform: ""
           - columnReference:
-              columnCounter: 17398
-              stepCounter: "1533"
+              columnCounter: 3977
+              stepCounter: "64"
             dataType: VARCHAR
             description: ""
             hashColumns: []
@@ -293,12 +251,12 @@ steps:
             nullable: true
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 17374
-                    stepCounter: "1532"
+                  - columnCounter: 3935
+                    stepCounter: "62"
                 transform: ""
           - columnReference:
-              columnCounter: 17399
-              stepCounter: "1533"
+              columnCounter: 3978
+              stepCounter: "64"
             dataType: TIMESTAMP
             description: ""
             hashColumns: []
@@ -307,12 +265,12 @@ steps:
             nullable: true
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 17375
-                    stepCounter: "1532"
+                  - columnCounter: 3936
+                    stepCounter: "62"
                 transform: ""
           - columnReference:
-              columnCounter: 17400
-              stepCounter: "1533"
+              columnCounter: 3979
+              stepCounter: "64"
             dataType: TIMESTAMP
             description: ""
             hashColumns: []
@@ -321,12 +279,12 @@ steps:
             nullable: true
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 17376
-                    stepCounter: "1532"
+                  - columnCounter: 3937
+                    stepCounter: "62"
                 transform: ""
           - columnReference:
-              columnCounter: 17401
-              stepCounter: "1533"
+              columnCounter: 3980
+              stepCounter: "64"
             dataType: TIMESTAMP
             description: ""
             hashColumns: []
@@ -335,12 +293,12 @@ steps:
             nullable: true
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 17377
-                    stepCounter: "1532"
+                  - columnCounter: 3938
+                    stepCounter: "62"
                 transform: ""
           - columnReference:
-              columnCounter: 17402
-              stepCounter: "1533"
+              columnCounter: 3981
+              stepCounter: "64"
             dataType: TIMESTAMP
             description: ""
             hashColumns: []
@@ -349,8 +307,8 @@ steps:
             nullable: true
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: 17378
-                    stepCounter: "1532"
+                  - columnCounter: 3939
+                    stepCounter: "62"
                 transform: ""
         cteString: ""
         enabledColumnTestIDs: []
@@ -358,10 +316,10 @@ steps:
           - customSQL:
               customSQL: ""
             dependencies:
-              - locationName: DWH
+              - locationName: STAGE
                 nodeName: DIM_SUPPLIER
             join:
-              joinCondition: FROM {{ ref('DWH', 'DIM_SUPPLIER') }} "DIM_SUPPLIER"
+              joinCondition: FROM {{ ref('STAGE', 'DIM_SUPPLIER') }} "DIM_SUPPLIER"
             name: V_SUPPLIER_MKT
             noLinkRefs: []
       name: V_SUPPLIER_MKT
@@ -369,4 +327,4 @@ steps:
       schema: ""
       sqlType: View
       type: sql
-    stepCounter: "1533"
+    stepCounter: "64"
