@@ -9,6 +9,7 @@ steps:
         truncateBefore: true
       database: ""
       dependencies: []
+      deployEnabled: true
       description: ""
       isDataVault: false
       isMultisource: false
@@ -101,7 +102,9 @@ steps:
               - locationName: SOURCE
                 nodeName: NATION
             join:
-              joinCondition: "FROM {{ ref('SOURCE', 'NATION') }} \"NATION\"\r\nORDER BY NATION.N_NATIONKEY"
+              joinCondition: |-
+                FROM {{ ref('SOURCE', 'NATION') }} "NATION"
+                ORDER BY NATION.N_NATIONKEY
             name: STG_NATION
             noLinkRefs: []
       name: STG_NATION
