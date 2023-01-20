@@ -8,7 +8,7 @@ steps:
       database: ""
       dependencies: []
       deployEnabled: true
-      description: ""
+      description: Supplier dimension sourced from our Operations system.  Grain of the table is 1 row per Supplier.  Changes are tracked on Address fields.
       isDataVault: false
       isMultisource: false
       locationID: ""
@@ -27,7 +27,7 @@ steps:
             config: {}
             dataType: NUMBER
             defaultValue: ""
-            description: ""
+            description: Surrogate Key
             hashColumns: []
             isSurrogateKey: true
             name: DIM_DIM_SUPPLIER_KEY
@@ -39,7 +39,7 @@ steps:
               columnCounter: 3920
               stepCounter: "62"
             dataType: NUMBER(38,0)
-            description: ""
+            description: Supplier Unique Identifier from Source
             hashColumns: []
             hashDetails: null
             isBusinessKey: true
@@ -54,7 +54,7 @@ steps:
               columnCounter: 3921
               stepCounter: "62"
             dataType: VARCHAR(25)
-            description: ""
+            description: Supplier Name
             hashColumns: []
             hashDetails: null
             name: S_NAME
