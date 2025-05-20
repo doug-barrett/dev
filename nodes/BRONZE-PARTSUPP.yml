@@ -1,11 +1,11 @@
 fileVersion: 1
-id: 61c07731-f39d-4fe8-96e9-3a17a1878b40
+id: a87184ae-9d20-4f09-9921-09f0935a5ec4
 name: PARTSUPP
 operation:
   database: ""
   deployEnabled: true
-  description: Partsupp data as defined by TPC-H
-  locationName: SOURCE
+  description: ""
+  locationName: BRONZE
   metadata:
     columns:
       - acceptedValues:
@@ -13,8 +13,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: bc04f046-ee6e-4365-ad62-ce88cd12b207
-          stepCounter: 61c07731-f39d-4fe8-96e9-3a17a1878b40
+          columnCounter: f280aef4-658e-4c4c-a96b-973f8280fd29
+          stepCounter: a87184ae-9d20-4f09-9921-09f0935a5ec4
         config: {}
         dataType: NUMBER(38,0)
         defaultValue: ""
@@ -32,8 +32,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: fc27426a-7ec8-4026-a5aa-6bec350f6a57
-          stepCounter: 61c07731-f39d-4fe8-96e9-3a17a1878b40
+          columnCounter: 41bf46d8-12fd-453f-a72d-6fce8c9db181
+          stepCounter: a87184ae-9d20-4f09-9921-09f0935a5ec4
         config: {}
         dataType: NUMBER(38,0)
         defaultValue: ""
@@ -51,8 +51,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: fa272fa9-20d3-4a73-99b0-66433bcf0d35
-          stepCounter: 61c07731-f39d-4fe8-96e9-3a17a1878b40
+          columnCounter: 9ece039b-5681-43f2-8950-7766e4ce5960
+          stepCounter: a87184ae-9d20-4f09-9921-09f0935a5ec4
         config: {}
         dataType: NUMBER(38,0)
         defaultValue: ""
@@ -70,8 +70,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: f0b08232-ca8e-4916-899b-5897d77aa6b9
-          stepCounter: 61c07731-f39d-4fe8-96e9-3a17a1878b40
+          columnCounter: f175a2d0-3c26-4b8b-acb8-139baed25736
+          stepCounter: a87184ae-9d20-4f09-9921-09f0935a5ec4
         config: {}
         dataType: NUMBER(12,2)
         defaultValue: ""
@@ -89,8 +89,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 57cc28de-05a9-4f51-ae64-a339f089b285
-          stepCounter: 61c07731-f39d-4fe8-96e9-3a17a1878b40
+          columnCounter: 2786968d-6e4f-4679-a21b-6462f2e2c7c6
+          stepCounter: a87184ae-9d20-4f09-9921-09f0935a5ec4
         config: {}
         dataType: VARCHAR(199)
         defaultValue: ""

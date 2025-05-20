@@ -1,11 +1,11 @@
 fileVersion: 1
-id: da313992-b67d-49e8-a8d8-a8670021e44d
+id: 6f3bbafb-a4a6-4183-b0ab-7a6a25f7dc55
 name: NATION
 operation:
   database: ""
   deployEnabled: true
-  description: Nation data as defined by TPC-H
-  locationName: SOURCE
+  description: ""
+  locationName: BRONZE
   metadata:
     columns:
       - acceptedValues:
@@ -13,8 +13,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 3405dcb6-a50c-46f4-84ed-d6d9dae2cc91
-          stepCounter: da313992-b67d-49e8-a8d8-a8670021e44d
+          columnCounter: ee85ec75-b1d2-4cde-b261-75522dc2d5a2
+          stepCounter: 6f3bbafb-a4a6-4183-b0ab-7a6a25f7dc55
         config: {}
         dataType: NUMBER(38,0)
         defaultValue: ""
@@ -32,8 +32,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: bc82af33-38d8-4395-aeba-17633357dfe9
-          stepCounter: da313992-b67d-49e8-a8d8-a8670021e44d
+          columnCounter: 80bcacbb-f95e-40de-9aba-1d22b61e0c1b
+          stepCounter: 6f3bbafb-a4a6-4183-b0ab-7a6a25f7dc55
         config: {}
         dataType: VARCHAR(25)
         defaultValue: ""
@@ -51,8 +51,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: fd5b5e3b-36f9-40aa-bccd-b5ea9772fea3
-          stepCounter: da313992-b67d-49e8-a8d8-a8670021e44d
+          columnCounter: 1c539f68-1aef-444d-8368-aff2ca9a613b
+          stepCounter: 6f3bbafb-a4a6-4183-b0ab-7a6a25f7dc55
         config: {}
         dataType: NUMBER(38,0)
         defaultValue: ""
@@ -70,8 +70,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 91c47729-a09d-4922-be88-66e305d4eaa8
-          stepCounter: da313992-b67d-49e8-a8d8-a8670021e44d
+          columnCounter: 3450d68f-10ef-4253-81cd-50a96c494a6c
+          stepCounter: 6f3bbafb-a4a6-4183-b0ab-7a6a25f7dc55
         config: {}
         dataType: VARCHAR(152)
         defaultValue: ""

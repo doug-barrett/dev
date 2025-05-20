@@ -1,11 +1,11 @@
 fileVersion: 1
-id: ed4879eb-a39e-4cb8-a0be-c8e8d8427976
+id: 3b12b3bf-76d9-4aa9-90ae-9c7dcd664f40
 name: REGION
 operation:
   database: ""
   deployEnabled: true
-  description: Region data as defined by TPC-H
-  locationName: SOURCE
+  description: ""
+  locationName: BRONZE
   metadata:
     columns:
       - acceptedValues:
@@ -13,8 +13,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: bfbf8bc4-479d-4ac9-9d98-9d9c06eb3908
-          stepCounter: ed4879eb-a39e-4cb8-a0be-c8e8d8427976
+          columnCounter: 2d796d99-5dd0-4853-a2d3-981613858acd
+          stepCounter: 3b12b3bf-76d9-4aa9-90ae-9c7dcd664f40
         config: {}
         dataType: NUMBER(38,0)
         defaultValue: ""
@@ -32,8 +32,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 1d6babea-d85c-4f60-96a3-fddf41bae1e7
-          stepCounter: ed4879eb-a39e-4cb8-a0be-c8e8d8427976
+          columnCounter: 70ec23bf-081c-4c27-a5b5-2b75c8862b52
+          stepCounter: 3b12b3bf-76d9-4aa9-90ae-9c7dcd664f40
         config: {}
         dataType: VARCHAR(25)
         defaultValue: ""
@@ -51,8 +51,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: e4149886-b73a-4f8b-8726-38d1078c811d
-          stepCounter: ed4879eb-a39e-4cb8-a0be-c8e8d8427976
+          columnCounter: 57ea3247-0405-439d-a3ea-20210c886013
+          stepCounter: 3b12b3bf-76d9-4aa9-90ae-9c7dcd664f40
         config: {}
         dataType: VARCHAR(152)
         defaultValue: ""
