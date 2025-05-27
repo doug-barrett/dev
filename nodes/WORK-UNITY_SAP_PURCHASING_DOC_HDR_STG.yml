@@ -1,5 +1,5 @@
 fileVersion: 1
-id: a2c32102-32db-4dc2-9bb7-943bf533e863
+id: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
 name: UNITY_SAP_PURCHASING_DOC_HDR_STG
 operation:
   config:
@@ -10,7 +10,7 @@ operation:
     truncateBefore: true
   database: ""
   deployEnabled: true
-  description: Contains purchasing document header information.
+  description: Contains purchasing document header data enriched with descriptions and flags.
   isMultisource: false
   locationName: WORK
   materializationType: table
@@ -19,1978 +19,1712 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 50ae7576-3f8b-4667-81a3-29ed1a76f3f4
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: d6513cec-0b98-43d4-bcb2-7f92fa127e6f
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: VARCHAR
         description: ""
-        name: ekko_slt_delete
+        name: EKKO_SLT_DELETE
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 50ae7576-3f8b-4667-81a3-29ed1a76f3f4
-                stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-            transform: CASE WHEN EKKO.SLT_DELETE = ' ' THEN NULL ELSE EKKO.SLT_DELETE END
+              - columnCounter: d6513cec-0b98-43d4-bcb2-7f92fa127e6f
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: STG_POS.EKPO_SLT_DELETE
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 843ef9bb-2334-445c-97d7-d9f9f2dbaacb
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: NUMBER
-        description: ""
-        name: hdr_slt_update
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 843ef9bb-2334-445c-97d7-d9f9f2dbaacb
-                stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-            transform: CAST(GREATEST(NVL(EKKO.SLT_UPDATE,'0'), NVL(T001.SLT_UPDATE,'0'), NVL(T161T.SLT_UPDATE,'0'), NVL(LFA1.SLT_UPDATE,'0'), NVL(T024E.SLT_UPDATE,'0'), NVL(T024.SLT_UPDATE,'0'), NVL(TINCT.SLT_UPDATE,'0')) AS DECIMAL(21,7))
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 85784131-7f32-4d28-b7de-fa86fa77437b
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_mandt
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 4e7147b4-9765-40fe-81c0-9bd7dbda0900
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.MANDT = '000' THEN NULL ELSE EKKO.MANDT END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 8675d799-1d3c-4835-a86d-3f0bbdebfbd5
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_ebeln
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 93f6c0f6-5fd6-4d2e-a083-5ff0a6a1fecb
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.EBELN = ' ' THEN NULL ELSE EKKO.EBELN END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: a702938e-a22c-45c1-877c-99477b98c060
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_bukrs
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: ba248220-e895-4042-81af-536c1dc9becb
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.BUKRS = ' ' THEN NULL ELSE EKKO.BUKRS END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 3853573a-2065-474a-99a6-29abf0946d4a
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_t001_butxt
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 87b8a8eb-674c-4011-952f-49dc721c0d2c
-                stepCounter: 1772ecd2-1d44-4d24-b067-a7d6f9e281a2
-            transform: CASE WHEN T001.BUTXT = ' ' THEN NULL ELSE T001.BUTXT END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 0623c756-b03e-407e-9f89-8cb5a14df6bf
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_bstyp
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 9669bad3-1d9e-479f-b7c0-f67102aab128
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.BSTYP = ' ' THEN NULL ELSE EKKO.BSTYP END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 54b797e0-7d36-4f53-b5d3-eed4b4d5b33b
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_bstyp_dd07t_ddtext
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 54b797e0-7d36-4f53-b5d3-eed4b4d5b33b
-                stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-            transform: DD07T.DDTEXT_DESC_ENGLISH
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 341e3a82-09cf-48e1-b6c2-2b230e52f786
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_bsart
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: fe64ca11-bd76-4ed7-b202-cf12a201e6d0
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.BSART = ' ' THEN NULL ELSE EKKO.BSART END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 8e29c2b3-a710-43b5-a7d9-48bd0ba5ce59
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_t161t_batxt
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 9b3f0c0e-e86c-47b3-b0c9-565af0c46e98
-                stepCounter: 49e1abea-9aa7-4e65-86a3-ca25eaec5cd6
-            transform: CASE WHEN T161T.BATXT = ' ' THEN NULL ELSE T161T.BATXT END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: f92a85b6-a008-4021-b748-2d8fff8a4899
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_bsakz
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 4f748ffa-e6c6-4b09-96c9-f5d3319638b4
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.BSAKZ = ' ' THEN NULL ELSE EKKO.BSAKZ END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 7be7608b-397e-445b-9cb1-79016efa5465
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_loekz
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: fea518f4-cec5-4a01-8427-6ae7eab4d6b5
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.LOEKZ = ' ' THEN NULL ELSE EKKO.LOEKZ END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: cc15c20e-2ec8-468d-af26-4a5f6c1128bb
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_statu
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: f8445761-bdb7-4421-b833-95df3a4ba10e
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.STATU = ' ' THEN NULL ELSE EKKO.STATU END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 03b706d7-1680-4292-aa60-41acd613c77d
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: TIMESTAMP
-        description: ""
-        name: ekko_aedat
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 1bd72bf2-a745-468a-be04-1f913a46dffd
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CAST(TO_TIMESTAMP(DATEDIFF(SECOND, '1970-01-01'::DATE,TRY_TO_TIMESTAMP(EKKO.AEDAT,'YYYYMMDD'))) AS TIMESTAMP)
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 807ad841-a8d2-4857-bddb-8373f33af224
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_ernam
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: de20bbbd-ba92-4b3d-8cc0-c18364a097ed
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.ERNAM = ' ' THEN NULL ELSE EKKO.ERNAM END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 4b8fe69d-060d-47da-8cbd-9e955195042c
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_pincr
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: d3b2897f-c864-4e9d-acc4-cd5ca6838f82
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.PINCR = '00000' THEN NULL ELSE EKKO.PINCR END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 44e793b8-4a38-4fd0-8899-9383725e4efe
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_lponr
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: dccf702a-ec92-447d-9584-99fcf47cf823
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.LPONR = '00000' THEN NULL ELSE EKKO.LPONR END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 2f39ddef-4b64-469d-a2d3-a96afdf93f8e
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_lifnr
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: e4ba782a-bd75-482f-8ca7-0a486cb17dc1
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.LIFNR = ' ' THEN NULL ELSE EKKO.LIFNR END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: bacc2f48-33ec-4aa8-b6e9-78125b0cdc92
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_lfa1_name1
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: eced122f-b191-43be-b49e-2f405f1a60aa
-                stepCounter: 7595d307-cf7c-4e23-b4b1-ad9fb3982660
-            transform: CASE WHEN LFA1.NAME1 = ' ' THEN NULL ELSE LFA1.NAME1 END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: e545e1f2-d8e5-4bdd-89f9-bdc2b1e1e433
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_spras
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 6c7c6ee7-dce8-4321-91cc-08315e0feea7
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.SPRAS = ' ' THEN NULL ELSE EKKO.SPRAS END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 969d5a60-f3d7-46d1-8dd1-7fddba59f035
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_zterm
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: e99baad3-cfd0-499c-8da0-a5293c1b9665
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.ZTERM = ' ' THEN NULL ELSE EKKO.ZTERM END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: c356c554-edc8-4193-b8a2-3bab54cb7103
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: f9040c4f-2983-4189-8e52-a14254035908
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: NUMBER
         description: ""
-        name: ekko_zbd1t
+        name: HDR_SLT_UPDATE
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: c1676050-75c2-4a0f-b31c-d1e149ff1eda
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CAST(EKKO.ZBD1T AS DECIMAL(3,0))
+              - columnCounter: f9040c4f-2983-4189-8e52-a14254035908
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: CAST(GREATEST(NVL(STG_POS.POS_SLT_UPDATE,0),NVL(STG_HDR.HDR_SLT_UPDATE,0),NVL(CAST(TCURX.SLT_UPDATE AS DECIMAL(21,7)),0)) AS DECIMAL(21,7))
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 4210b7c0-5ac0-48bd-807c-7725106c361e
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: 7b55d390-a1f9-4895-953b-b165ff270ca4
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_ABGRU
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7b55d390-a1f9-4895-953b-b165ff270ca4
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a25ee9f3-2043-49c9-9b26-d771bde7b716
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_ABSGR
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a25ee9f3-2043-49c9-9b26-d771bde7b716
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: cbff9d17-04da-4268-9c16-264177b210dc
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_ADDNR
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cbff9d17-04da-4268-9c16-264177b210dc
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9ac59e-f429-45e1-bf4b-00068f94d035
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_ADRNR
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9ac59e-f429-45e1-bf4b-00068f94d035
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2a15924a-ac87-4f0b-9e6f-607d029fbc35
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: DATE
+        description: ""
+        name: EKKO_AEDAT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2a15924a-ac87-4f0b-9e6f-607d029fbc35
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 64dba0e4-abd3-49fa-ad6f-fec4e3ed448e
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: DATE
+        description: ""
+        name: EKKO_ANGDT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 64dba0e4-abd3-49fa-ad6f-fec4e3ed448e
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3d528b53-51c6-486b-95b4-1681a6fcd4eb
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_ANGNR
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3d528b53-51c6-486b-95b4-1681a6fcd4eb
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8494269b-df77-4acd-a00e-8bf85def400d
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_AUREL_ALLOW
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8494269b-df77-4acd-a00e-8bf85def400d
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: edb1498d-857f-41fb-aab2-fc2804dd030d
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_AUSNR
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: edb1498d-857f-41fb-aab2-fc2804dd030d
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f6741b54-a2df-4156-b835-7cf99170e14e
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_AUTLF
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f6741b54-a2df-4156-b835-7cf99170e14e
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1c4825b2-ed88-4966-8e82-c6c420fe40a1
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: DATE
+        description: ""
+        name: EKKO_BEDAT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1c4825b2-ed88-4966-8e82-c6c420fe40a1
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 862f2ede-34d3-488b-b9f2-60e0441592c9
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: DATE
+        description: ""
+        name: EKKO_BNDDT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 862f2ede-34d3-488b-b9f2-60e0441592c9
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 653d5b11-5227-457a-aa5c-02e72b405b19
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_BSAKZ
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 653d5b11-5227-457a-aa5c-02e72b405b19
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d4e60ae7-8614-41f5-b344-ec1e9cfb44df
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_BSART
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d4e60ae7-8614-41f5-b344-ec1e9cfb44df
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b5fda0fa-16cc-4546-814b-f5236dd5dee1
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_BSTYP
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b5fda0fa-16cc-4546-814b-f5236dd5dee1
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 461078f2-0682-4b5f-80e7-a1e0e27c93eb
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_BSTYP_DD07T_DDTEXT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 461078f2-0682-4b5f-80e7-a1e0e27c93eb
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3e6f465d-6d00-44a2-973c-862ec5aaca93
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_BUDG_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3e6f465d-6d00-44a2-973c-862ec5aaca93
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eeb0e448-a192-4761-963e-745083e7b01c
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_BUKRS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eeb0e448-a192-4761-963e-745083e7b01c
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: cf88a04f-1562-4846-b89a-479e30be2c0a
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_BWBDT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cf88a04f-1562-4846-b89a-479e30be2c0a
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9f71c0bd-b192-46e2-a980-5ff8c55d2b23
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_CHECK_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9f71c0bd-b192-46e2-a980-5ff8c55d2b23
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8c0917a1-303b-433a-9b6a-e51259c4b4b5
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_CON_DISTR_LEV
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8c0917a1-303b-433a-9b6a-e51259c4b4b5
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a0652baa-88db-44c4-a7e0-6a49ee828e1a
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_CON_OTB_REQ
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a0652baa-88db-44c4-a7e0-6a49ee828e1a
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 18fa3be5-4a3a-4f73-8fe4-d7282e5addd8
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_CON_PREBOOK_LEV
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 18fa3be5-4a3a-4f73-8fe4-d7282e5addd8
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ae75d6c9-b073-4e78-90f6-e9c47766f9c8
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_CONTRACT_ALLOW
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ae75d6c9-b073-4e78-90f6-e9c47766f9c8
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9aa4b7a9-c13c-410a-ba08-9bd4a7e9ca6e
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_DELPER_ALLOW
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9aa4b7a9-c13c-410a-ba08-9bd4a7e9ca6e
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ca6912fd-ab4e-4917-bd37-cb9c2b83716d
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_DESCRIPTION
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ca6912fd-ab4e-4917-bd37-cb9c2b83716d
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 54ff3705-e2d1-4d77-9db1-c9e2b799e18b
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_EINDT_ALLOW
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 54ff3705-e2d1-4d77-9db1-c9e2b799e18b
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b19f1440-da17-480c-8810-83dc3695318d
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_EKGRP
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b19f1440-da17-480c-8810-83dc3695318d
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 89a03750-53ba-44a8-a924-847893fa9c57
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_EKGRP_ALLOW
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 89a03750-53ba-44a8-a924-847893fa9c57
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6671cb8a-5fc8-45ad-9995-950dbec1d6af
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_EKORG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6671cb8a-5fc8-45ad-9995-950dbec1d6af
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 37bf1b21-fde3-42e0-b3d1-760351aea1ab
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_EQ_EINDT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 37bf1b21-fde3-42e0-b3d1-760351aea1ab
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1145a0e-5e4f-4075-8768-dfec98f7a34f
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_EQ_WERKS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1145a0e-5e4f-4075-8768-dfec98f7a34f
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2aed21fe-2465-4b0d-a4ba-e2c8caa8f567
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_ERNAM
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2aed21fe-2465-4b0d-a4ba-e2c8caa8f567
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: fbc6e3f5-57c4-4b69-99b0-c1b5488b1abb
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_EXNUM
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fbc6e3f5-57c4-4b69-99b0-c1b5488b1abb
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4f02fa19-ceaa-4b61-98c2-fae0f93e9fda
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_EXTERNALREFERENCEID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4f02fa19-ceaa-4b61-98c2-fae0f93e9fda
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6d02bc32-30ab-4e49-87e3-5c8749db08d2
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_EXTERNALSYSTEM
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6d02bc32-30ab-4e49-87e3-5c8749db08d2
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b4d8a6b2-4869-4fdd-8180-bda2246fd830
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_FIXPO
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b4d8a6b2-4869-4fdd-8180-bda2246fd830
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 685baa80-8066-413d-8878-e2ead26c0156
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_FIXPO_ALLOW
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 685baa80-8066-413d-8878-e2ead26c0156
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5fa2b780-cd61-4272-98c1-59272b4e75ee
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_FORCE_CNT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5fa2b780-cd61-4272-98c1-59272b4e75ee
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3136a533-9f1d-41b2-b58f-bf85fe59d7ce
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_FORCE_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3136a533-9f1d-41b2-b58f-bf85fe59d7ce
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ca887f7b-e102-49af-9d9c-ffb51674791c
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_FRGGR
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ca887f7b-e102-49af-9d9c-ffb51674791c
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: be6ab4e3-ed19-4241-afbb-a1c723fc9658
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_FRGKE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: be6ab4e3-ed19-4241-afbb-a1c723fc9658
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3d0637eb-7153-4aed-bbe5-8c5bd6bb8dc3
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_FRGRL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3d0637eb-7153-4aed-bbe5-8c5bd6bb8dc3
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f5f74305-5b32-400c-ad1a-a406a8c775cf
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_FRGSX
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f5f74305-5b32-400c-ad1a-a406a8c775cf
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e80f71de-6a1e-4d49-a028-c0f452b1955c
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_FRGZU
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e80f71de-6a1e-4d49-a028-c0f452b1955c
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 733e5b7b-a45b-41ab-bb5a-b7a2f126ba65
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: DATE
+        description: ""
+        name: EKKO_GWLDT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 733e5b7b-a45b-41ab-bb5a-b7a2f126ba65
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 70a6d49c-f5cd-4276-90ce-c7f2fa11ff3f
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: BOOLEAN
+        description: ""
+        name: EKKO_HIERARCHY_EXISTS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 70a6d49c-f5cd-4276-90ce-c7f2fa11ff3f
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bc61f1ab-def8-404d-849f-108aa78452ef
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_IHRAN
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bc61f1ab-def8-404d-849f-108aa78452ef
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d9ea2d37-1d3b-4a0e-9951-05f3db52ae2e
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_IHREZ
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d9ea2d37-1d3b-4a0e-9951-05f3db52ae2e
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ffa3c858-1274-4214-8b16-1d5c761f89e4
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_INCOV
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ffa3c858-1274-4214-8b16-1d5c761f89e4
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9834b4fa-ace0-4bbc-9a8b-4144d17e11ef
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_KALSM
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9834b4fa-ace0-4bbc-9a8b-4144d17e11ef
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d0eb6659-3a10-483f-a8e1-5b4ed9440428
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_KDATB
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d0eb6659-3a10-483f-a8e1-5b4ed9440428
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e50b8203-dd1d-4250-a4c4-1d8debc18027
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_KDATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e50b8203-dd1d-4250-a4c4-1d8debc18027
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b5a58a0c-1c8c-4cb6-8466-5bef36459915
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_KEY_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b5a58a0c-1c8c-4cb6-8466-5bef36459915
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b54488cd-01de-4aaa-b321-e441bb9f8e6d
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_KEY_ID_ALLOW
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b54488cd-01de-4aaa-b321-e441bb9f8e6d
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 30cf0b3a-d02b-4b0a-a6a4-9d73ddbad32e
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_KNUMV
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 30cf0b3a-d02b-4b0a-a6a4-9d73ddbad32e
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9648150b-2de9-471c-b085-96c7eaa37c2a
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_KORNR
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9648150b-2de9-471c-b085-96c7eaa37c2a
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56b947e9-984c-44c5-9381-d96cd4ea6daa
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: NUMBER
         description: ""
-        name: ekko_zbd2t
+        name: EKKO_KTWRT
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: c3cab60d-ccdc-43e3-9a65-7f8151210405
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CAST(EKKO.ZBD2T AS DECIMAL(3,0))
+              - columnCounter: 56b947e9-984c-44c5-9381-d96cd4ea6daa
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: CAST(STG_HDR.EKKO_KTWRT*POWER(10, 2 - NVL(CAST(TCURX.CURRDEC AS INT), 2) )*CASE WHEN STG_POS.EKPO_RETPO='X' THEN -1 ELSE 1 END  AS DECIMAL(22,2))
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 5c234bc3-77a4-42a7-8b5e-5fdbf89aa609
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: 962dd2f1-39dd-48ef-9257-c5457b2d37e4
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_KUFIX
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 962dd2f1-39dd-48ef-9257-c5457b2d37e4
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 329dc2fd-c39f-4f97-9d04-235c82964694
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_LANDS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 329dc2fd-c39f-4f97-9d04-235c82964694
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bde8c836-622e-49e7-9490-08a0b3dba0f6
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_LBLIF
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bde8c836-622e-49e7-9490-08a0b3dba0f6
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: fed5dd34-5f81-46de-814e-176fff3d96c1
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_LEGAL_CONTRACT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fed5dd34-5f81-46de-814e-176fff3d96c1
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 04679996-7062-4652-ab08-53aa017b390f
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_LIFNR
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 04679996-7062-4652-ab08-53aa017b390f
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: daf6a071-5633-4a04-a8a7-a5e9b6feab67
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_LFA1_NAME1
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: daf6a071-5633-4a04-a8a7-a5e9b6feab67
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46b62020-0afd-43ca-9e2e-6d1f7cdd18c3
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_LIFRE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 46b62020-0afd-43ca-9e2e-6d1f7cdd18c3
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: fd19de52-f6bb-4514-b1a1-1a5e8e1891f9
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_LLIEF
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fd19de52-f6bb-4514-b1a1-1a5e8e1891f9
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 654af606-185b-4ac6-b991-b813a20fdac2
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_LOGSY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 654af606-185b-4ac6-b991-b813a20fdac2
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 98c60185-775d-4d4f-b63d-76456df72d49
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_LPHIS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 98c60185-775d-4d4f-b63d-76456df72d49
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2bd09430-fcf1-4134-a9a8-4f548b7fec84
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_LPONR
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2bd09430-fcf1-4134-a9a8-4f548b7fec84
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 36f54aaf-e82c-488a-8a99-0238f8b28a4b
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_LTSNR_ALLOW
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 36f54aaf-e82c-488a-8a99-0238f8b28a4b
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 399d4cac-2b2c-4779-ad12-f455e0e495d0
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_MANDT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 399d4cac-2b2c-4779-ad12-f455e0e495d0
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 16ac6cb9-7917-42a6-88bb-fb652c8774c4
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: NUMBER
         description: ""
-        name: ekko_zbd3t
+        name: EKKO_MEMORY
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 0137f2e2-d470-49cf-906a-e978a7eb6597
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CAST(EKKO.ZBD3T AS DECIMAL(3,0))
+              - columnCounter: 16ac6cb9-7917-42a6-88bb-fb652c8774c4
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 736c5c9e-d7b0-43e9-9904-50f6d16286ed
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: f7b9ce17-cb97-497b-bfa1-065057c826ad
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_MEMORYTYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f7b9ce17-cb97-497b-bfa1-065057c826ad
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1c18dbd5-b1d5-4c72-b18d-d116b018b2a5
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_MSR_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1c18dbd5-b1d5-4c72-b18d-d116b018b2a5
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 19ca7beb-b34b-4f9a-bba9-15185da16b18
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_OTB_COND_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 19ca7beb-b34b-4f9a-bba9-15185da16b18
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ffb71162-a484-4c74-a2db-ce90d2b29b55
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_OTB_CURR
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ffb71162-a484-4c74-a2db-ce90d2b29b55
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f8c80bd6-3176-4c83-a193-295bbd1544e7
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: NUMBER
         description: ""
-        name: ekko_zbd1p
+        name: EKKO_OTB_LEVEL
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 5033abe4-ac14-4fed-891c-0794e3126726
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CAST(EKKO.ZBD1P AS DECIMAL(5,3))
+              - columnCounter: f8c80bd6-3176-4c83-a193-295bbd1544e7
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: dc7d6c4d-b55c-4e26-a3b6-c8e0a5374de9
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: 71ff771c-e679-4de7-9392-18082018cb9d
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_OTB_REASON
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 71ff771c-e679-4de7-9392-18082018cb9d
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c4b70eef-2f5d-438b-b8d1-7b74063c59ea
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: NUMBER
         description: ""
-        name: ekko_zbd2p
+        name: EKKO_OTB_RES_VALUE
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: c73054e0-36b1-4b7c-adbf-c76f8b70d3ab
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CAST(EKKO.ZBD2P AS DECIMAL(5,3))
+              - columnCounter: c4b70eef-2f5d-438b-b8d1-7b74063c59ea
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: CAST(STG_HDR.EKKO_OTB_RES_VALUE*POWER(10, 2 - NVL(CAST(TCURX.CURRDEC AS INT), 2))*CASE WHEN STG_POS.EKPO_RETPO='X' THEN -1 ELSE 1 END AS DECIMAL(22,2))
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: df2f4e3b-37a4-4ec1-9774-0b29fdc28a69
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_ekorg
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 8088a8b8-7f08-4951-b378-2d3b5425b7f6
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.EKORG = ' ' THEN NULL ELSE EKKO.EKORG END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 90aaab25-6ac4-466a-b927-3de634ffe7b4
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_t024e_ekotx
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 90aaab25-6ac4-466a-b927-3de634ffe7b4
-                stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-            transform: CASE WHEN T024E.EKOTX = ' ' THEN NULL ELSE T024E.EKOTX END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 02b31b75-93d7-4e6c-952c-43865789465a
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_ekgrp
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 73066623-6dee-4a01-b64f-d450d4576391
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.EKGRP = ' ' THEN NULL ELSE EKKO.EKGRP END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 71e1580e-8413-4808-956e-7eca22d88171
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_t024_eknam
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 71e1580e-8413-4808-956e-7eca22d88171
-                stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-            transform: CASE WHEN T024.EKNAM = ' ' THEN NULL ELSE T024.EKNAM END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 39cf8a0f-8371-49cf-9396-0946efe1d5a9
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_waers
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: bf21de00-14ba-4569-a79d-6b04d8586332
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.WAERS = ' ' THEN NULL ELSE EKKO.WAERS END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: e924a47f-6203-4a97-b853-12217f24a1df
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: f45f5e18-5e21-47ba-8666-b4ec5d4e369c
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: NUMBER
         description: ""
-        name: ekko_wkurs
+        name: EKKO_OTB_SPEC_VALUE
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: ce88c9cb-2609-4d92-86b6-ab402d374b7d
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CAST(EKKO.WKURS AS DECIMAL(9,5))
+              - columnCounter: f45f5e18-5e21-47ba-8666-b4ec5d4e369c
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: CAST(STG_HDR.EKKO_OTB_SPEC_VALUE*POWER(10, 2 - NVL(CAST(TCURX.CURRDEC AS INT), 2))*CASE WHEN STG_POS.EKPO_RETPO='X' THEN -1 ELSE 1 END AS DECIMAL(22,2))
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 6483df61-77f1-4f0a-b5fe-393404521fdd
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: cf7b39ee-2ec0-4ed3-97a4-1cfec10424ce
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: VARCHAR
         description: ""
-        name: ekko_kufix
+        name: EKKO_OTB_STATUS
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: af0db6ed-0e9c-4425-97ce-1349bd37d223
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.KUFIX = ' ' THEN NULL ELSE EKKO.KUFIX END
+              - columnCounter: cf7b39ee-2ec0-4ed3-97a4-1cfec10424ce
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: c2ba06c3-57c1-4d0a-9257-03f32963919a
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: TIMESTAMP
-        description: ""
-        name: ekko_bedat
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 1fd51b20-fb17-4cc8-8560-400e18b566a8
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CAST(TO_TIMESTAMP(DATEDIFF(SECOND, '1970-01-01'::DATE,TRY_TO_TIMESTAMP(EKKO.BEDAT,'YYYYMMDD'))) AS TIMESTAMP)
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: b7981397-331d-4d26-862d-889a49343db7
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: TIMESTAMP
-        description: ""
-        name: ekko_kdatb
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 36a0eb5d-4db7-45cc-870e-55bb96a19670
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CAST(TO_TIMESTAMP(DATEDIFF(SECOND, '1970-01-01'::DATE,TRY_TO_TIMESTAMP(EKKO.KDATB,'YYYYMMDD'))) AS TIMESTAMP)
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 304ef8bf-d5c0-4b67-b664-eaf2337bcb4a
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: TIMESTAMP
-        description: ""
-        name: ekko_kdate
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 81bce938-5cad-491f-a78c-d594d41ff927
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CAST(TO_TIMESTAMP(DATEDIFF(SECOND, '1970-01-01'::DATE,TRY_TO_TIMESTAMP(EKKO.KDATE,'YYYYMMDD'))) AS TIMESTAMP)
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 630cd57b-d82f-4f65-874e-5e5c0ec8ee5e
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: TIMESTAMP
-        description: ""
-        name: ekko_bwbdt
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: bfb0d940-c143-4442-9013-95fdd73bd90d
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CAST(TO_TIMESTAMP(DATEDIFF(SECOND, '1970-01-01'::DATE,TRY_TO_TIMESTAMP(EKKO.BWBDT,'YYYYMMDD'))) AS TIMESTAMP)
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 989f2b79-2a8b-43a3-8558-b33dd33d2e35
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: TIMESTAMP
-        description: ""
-        name: ekko_angdt
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 5cdbd5a7-4283-46a5-b64c-08f0f49b0ea2
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CAST(TO_TIMESTAMP(DATEDIFF(SECOND, '1970-01-01'::DATE,TRY_TO_TIMESTAMP(EKKO.ANGDT,'YYYYMMDD'))) AS TIMESTAMP)
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 6c8d99d1-da60-4fe6-baea-cf205be277fc
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: TIMESTAMP
-        description: ""
-        name: ekko_bnddt
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 4387d96b-99ed-42e0-a20d-48861b83e57a
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CAST(TO_TIMESTAMP(DATEDIFF(SECOND, '1970-01-01'::DATE,TRY_TO_TIMESTAMP(EKKO.BNDDT,'YYYYMMDD'))) AS TIMESTAMP)
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: a580f25e-0219-4980-9a72-ca96a360bdf9
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: TIMESTAMP
-        description: ""
-        name: ekko_gwldt
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: f44a3cf3-161a-4d75-8293-6ddda08111f0
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CAST(TO_TIMESTAMP(DATEDIFF(SECOND, '1970-01-01'::DATE,TRY_TO_TIMESTAMP(EKKO.GWLDT,'YYYYMMDD'))) AS TIMESTAMP)
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 8b913550-2995-4f70-ab2d-22a73a5a2af7
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_ausnr
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 680258e4-4163-4310-a4d8-56792fa7967b
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.AUSNR = ' ' THEN NULL ELSE EKKO.AUSNR END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 235ce45b-579b-42e7-be93-36b63d5e27d0
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_angnr
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 335ad4f9-a625-4470-9bba-3d41a3606c6e
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.ANGNR = ' ' THEN NULL ELSE EKKO.ANGNR END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 8c999674-2e4c-4c36-a08e-2670a3d35c41
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: TIMESTAMP
-        description: ""
-        name: ekko_ihran
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: e5f6aa82-d6a2-448d-9072-ed1a0d18e8c8
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CAST(TO_TIMESTAMP(DATEDIFF(SECOND, '1970-01-01'::DATE,TRY_TO_TIMESTAMP(EKKO.IHRAN,'YYYYMMDD'))) AS TIMESTAMP)
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: eb8ee218-d2f5-4d3d-8647-92539caff249
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_ihrez
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 1752bed7-d443-40e8-9bd6-7a9496a24158
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.IHREZ = ' ' THEN NULL ELSE EKKO.IHREZ END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: e8675a1c-fb31-4a26-8637-5971fce6c6ef
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_verkf
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 2c5a7c05-a689-4b02-8797-48db7ed65edd
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.VERKF = ' ' THEN NULL ELSE EKKO.VERKF END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: d5f78b82-3337-4253-86b3-183b8508066e
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_telf1
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 67daf2ba-fd5d-4f38-b83f-1e5531ac60e3
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.TELF1 = ' ' THEN NULL ELSE EKKO.TELF1 END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 684a00ce-6947-48e6-9c15-78f3b74b7fad
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_llief
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: d94965ca-a5dc-4e82-87a5-e2e1cd773d36
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.LLIEF = ' ' THEN NULL ELSE EKKO.LLIEF END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: c72b797c-87c0-4c04-902f-e3b676373950
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_kunnr
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 362c4dba-e94c-4809-a3eb-e4add793d31e
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.KUNNR = ' ' THEN NULL ELSE EKKO.KUNNR END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: fb92f6dd-4eb5-4d8c-a42d-cf6d2a50e8e3
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_konnr
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 10e4f997-105f-45b3-a8f8-9e9a9db4d444
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.KONNR = ' ' THEN NULL ELSE EKKO.KONNR END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 62e677c9-375d-49c9-9770-865da4919d6a
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_abgru
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 0ca0d56d-f354-4a3d-9c4e-acbb766cfceb
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.ABGRU = ' ' THEN NULL ELSE EKKO.ABGRU END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 84136662-4b07-47f6-b3c5-90ebe7615c10
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_autlf
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 7d8bd702-969e-42fe-8178-3070b2a3a9a8
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.AUTLF = ' ' THEN NULL ELSE EKKO.AUTLF END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 00fb58a7-268a-4947-9b24-a7e3c6c99e53
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_weakt
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: c735d9bb-a5d0-4e7f-8523-f6554bc59e7b
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.WEAKT = ' ' THEN NULL ELSE EKKO.WEAKT END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: fcf0aad9-fed8-4ced-913e-e265ba121d56
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_reswk
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: ad3778e5-8b75-4ca2-a530-09d989df2bda
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.RESWK = ' ' THEN NULL ELSE EKKO.RESWK END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 6f1d839c-ac51-47d2-8457-50f4d2e32544
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_lblif
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: eb4e90ec-797d-4611-a830-0ced26395907
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.LBLIF = ' ' THEN NULL ELSE EKKO.LBLIF END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 252ec870-5d1d-415d-83a5-85e08598ebc6
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_inco1
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: d134b959-afd9-4e42-9f60-737649ba7389
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.INCO1 = ' ' THEN NULL ELSE EKKO.INCO1 END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 57f7762a-ee9f-4903-b008-fc6c89e061fc
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_tinct_bezei
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 32ad64e5-61ca-482d-9bca-3227fa8d5504
-                stepCounter: c2f30bb5-8f4a-402a-a45e-456166a59faa
-            transform: CASE WHEN TINCT.BEZEI = ' ' THEN NULL ELSE TINCT.BEZEI END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 16ff2909-877a-4e69-a86c-852eedcc0111
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_inco2
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: bddf3ddc-a793-46e9-9451-dae7526c7322
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.INCO2 = ' ' THEN NULL ELSE EKKO.INCO2 END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 2d410f1a-1bf1-40fa-bf5f-d0f3a3738c6a
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: 59927242-cd71-4f06-b889-3238c323e247
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: NUMBER
         description: ""
-        name: ekko_ktwrt
+        name: EKKO_OTB_VALUE
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 17b165a1-9f0e-4d98-a025-4a56f3f98d4f
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CAST(EKKO.KTWRT AS DECIMAL(15,2))
+              - columnCounter: 59927242-cd71-4f06-b889-3238c323e247
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: CAST(STG_HDR.EKKO_OTB_VALUE*POWER(10, 2 - NVL(CAST(TCURX.CURRDEC AS INT), 2))*CASE WHEN STG_POS.EKPO_RETPO='X' THEN -1 ELSE 1 END AS DECIMAL(22,2))
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: d1c6352c-1ae3-4045-a37a-d87049e41815
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: 275ef08a-a9aa-4f99-a373-673a83299144
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: VARCHAR
         description: ""
-        name: ekko_submi
+        name: EKKO_PINCR
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: f99cc17a-51ae-4feb-9a50-fc1d06bd47e3
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.SUBMI = ' ' THEN NULL ELSE EKKO.SUBMI END
+              - columnCounter: 275ef08a-a9aa-4f99-a373-673a83299144
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 3e53378c-498f-4e97-a126-1372ab630a4e
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: 56fa6a4d-0437-43bb-bc03-f8f3dc1b6ee6
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: VARCHAR
         description: ""
-        name: ekko_knumv
+        name: EKKO_POHF_TYPE
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: dc432185-a457-49b1-b9d3-33c85d5eb11b
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.KNUMV = ' ' THEN NULL ELSE EKKO.KNUMV END
+              - columnCounter: 56fa6a4d-0437-43bb-bc03-f8f3dc1b6ee6
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: e50951e5-8de9-4480-a0fc-d9ef916a0d9c
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: 78c73da1-4a49-4d76-8a79-cf097409bb83
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: VARCHAR
         description: ""
-        name: ekko_kalsm
+        name: EKKO_PROCSTAT
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 8ecbca7d-934c-4f2a-9005-113d0af59d1c
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.KALSM = ' ' THEN NULL ELSE EKKO.KALSM END
+              - columnCounter: 78c73da1-4a49-4d76-8a79-cf097409bb83
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: be5f7aaf-abd2-414b-8ce8-734dcb915425
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: d22cae31-aea1-4eed-b568-65e1b08ed0f3
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: VARCHAR
         description: ""
-        name: ekko_stafo
+        name: EKKO_PSTYP_ALLOW
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 0cecc8de-dc18-42c3-8400-db40798cd658
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.STAFO = ' ' THEN NULL ELSE EKKO.STAFO END
+              - columnCounter: d22cae31-aea1-4eed-b568-65e1b08ed0f3
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 115b35a8-8701-43b4-871e-3575b3f61dc2
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: cb1060e1-0fc9-4113-a8e6-a237d82646ea
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: DATE
+        description: ""
+        name: EKKO_RELEASE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cb1060e1-0fc9-4113-a8e6-a237d82646ea
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c3c168ae-7571-4541-b156-6b264fe21011
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: VARCHAR
         description: ""
-        name: ekko_lifre
+        name: EKKO_RELOC_ID
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 952c2f07-4401-4c81-81df-f5e427a2b9dd
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.LIFRE = ' ' THEN NULL ELSE EKKO.LIFRE END
+              - columnCounter: c3c168ae-7571-4541-b156-6b264fe21011
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 5a88b524-bba2-45b0-93a7-358cf13757dc
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: 408c168e-e00c-4a00-9d1e-85b3d68b3b39
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: VARCHAR
         description: ""
-        name: ekko_exnum
+        name: EKKO_RELOC_SEQ_ID
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 9ada28b3-7d34-4082-8c40-f5717fd8ccac
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.EXNUM = ' ' THEN NULL ELSE EKKO.EXNUM END
+              - columnCounter: 408c168e-e00c-4a00-9d1e-85b3d68b3b39
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 8dcab460-fcac-40ec-a03d-a0fd4b9d093f
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: 60499fe4-2c76-40d5-b24f-8acf7f94cea5
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: VARCHAR
         description: ""
-        name: ekko_unsez
+        name: EKKO_RESWK
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: edaf587f-fbf1-44b2-8dde-0ee11a4890b3
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.UNSEZ = ' ' THEN NULL ELSE EKKO.UNSEZ END
+              - columnCounter: 60499fe4-2c76-40d5-b24f-8acf7f94cea5
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 00b52cee-a84a-4be6-aa75-00688c8ba86a
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: a0a9170e-3711-4401-87c4-6ae29a1bfb75
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: VARCHAR
         description: ""
-        name: ekko_logsy
+        name: EKKO_RETTP
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: ecd45a3c-b351-4359-a446-4a0aacc0f95f
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.LOGSY = ' ' THEN NULL ELSE EKKO.LOGSY END
+              - columnCounter: a0a9170e-3711-4401-87c4-6ae29a1bfb75
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: fcd125c5-8fc0-4819-a0f3-893e81595410
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: 5b99edab-3df9-42e3-820d-7bd9756b301d
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: VARCHAR
         description: ""
-        name: ekko_upinc
+        name: EKKO_REVNO
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 85ccb40f-4763-4b65-931c-32e34b557878
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.UPINC = '00000' THEN NULL ELSE EKKO.UPINC END
+              - columnCounter: 5b99edab-3df9-42e3-820d-7bd9756b301d
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 6b9fb7bc-bb54-43d3-bccd-2751d81efe4c
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_stako
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: f329305a-0afc-47fb-9ea8-c9a4a11bd632
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.STAKO = ' ' THEN NULL ELSE EKKO.STAKO END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: f2d7b5f6-3f40-4677-9869-2d2dd977d90c
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_frggr
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 2c8e7672-50d4-4b93-ba7f-c6f8a0006722
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.FRGGR = ' ' THEN NULL ELSE EKKO.FRGGR END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: afddacfd-de07-4b8c-b19a-68bf84542ac2
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_frgsx
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: ab70255e-b4cd-4e45-8794-a52995b7e01a
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.FRGSX = ' ' THEN NULL ELSE EKKO.FRGSX END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: c6ff9644-5098-482c-9452-db98c81980ba
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_frgke
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: cf256413-923e-4a48-912b-1cc90f3e7241
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.FRGKE = ' ' THEN NULL ELSE EKKO.FRGKE END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 3f525361-40d9-41fb-a6ea-040457be3f83
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_frgzu
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: acd1835c-f34d-4c7d-ad1e-def4252d3a61
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.FRGZU = ' ' THEN NULL ELSE EKKO.FRGZU END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 46fd8c75-ae04-4bd8-a1c1-0b8a6c201b8e
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_frgrl
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 5e35106a-9463-41c8-aa9c-62f2aa4dac46
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.FRGRL = ' ' THEN NULL ELSE EKKO.FRGRL END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: e67520a5-10ff-43cd-8abe-f4ca7f4b8e5d
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_lands
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: d74e0baf-c076-462e-95f8-784ea901dcf6
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.LANDS = ' ' THEN NULL ELSE EKKO.LANDS END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: c8ded705-b93f-4162-9b49-e74bfe5bcf7c
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_lphis
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: e01339fa-0da9-441d-b9cf-a9776ad932b1
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.LPHIS = ' ' THEN NULL ELSE EKKO.LPHIS END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 8814fbc5-2d3c-4d90-a062-e04cedd0e903
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_adrnr
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 3bee3912-e673-4fdb-bf4a-1c27a6918da0
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.ADRNR = ' ' THEN NULL ELSE EKKO.ADRNR END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 65418deb-0219-4764-b77c-8c260dd76f09
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_stceg_l
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: cd017fd5-7507-4db5-a45a-fe641c4c1d20
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.STCEG_L = ' ' THEN NULL ELSE EKKO.STCEG_L END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 989a7c39-9b92-47f9-9156-66296cd7b0cb
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_stceg
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 51aeaed1-ef82-47c6-8415-9a6efc50900b
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.STCEG = ' ' THEN NULL ELSE EKKO.STCEG END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: a494841b-db22-4446-a5f5-129463317738
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_absgr
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: d5ac6659-52e8-4450-bff6-0ebf6851f94e
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.ABSGR = '00' THEN NULL ELSE EKKO.ABSGR END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: bded231a-30b6-4f01-82ae-df85361335e5
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_addnr
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 15243caa-2deb-4966-a89f-f968c236e30c
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.ADDNR = ' ' THEN NULL ELSE EKKO.ADDNR END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 6f92bdbb-d8dc-4be4-9ede-0f791104402a
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_kornr
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: f03a3c66-fba3-4769-a794-2ba27a82ee2d
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.KORNR = ' ' THEN NULL ELSE EKKO.KORNR END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: b4cd68b1-8983-4c1d-9926-0dfe4b71d30a
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_memory
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: fb6966b5-d874-43f2-9d5e-79af58bc81ab
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.MEMORY = ' ' THEN NULL ELSE EKKO.MEMORY END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 2e936e0d-6119-4c01-ba9e-2d29df33845f
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_procstat
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 1cb76c74-15c4-4a73-8b3d-10365567d3c3
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.PROCSTAT = ' ' THEN NULL ELSE EKKO.PROCSTAT END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: d2126f07-45bd-41e2-b72a-402575aad6c9
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: 8fd39ef2-2456-46c3-8788-e72b14b065a3
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: NUMBER
         description: ""
-        name: ekko_rlwrt
+        name: EKKO_RLWRT
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 70e5c8e1-361f-4d5a-af92-359165eb0927
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CAST(EKKO.RLWRT AS DECIMAL(15,2))
+              - columnCounter: 8fd39ef2-2456-46c3-8788-e72b14b065a3
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: CAST(STG_HDR.EKKO_RLWRT*POWER(10, 2 - NVL(CAST(TCURX.CURRDEC AS INT), 2))*CASE WHEN STG_POS.EKPO_RETPO='X' THEN -1 ELSE 1 END AS DECIMAL(22,2))
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 79d76ae0-5e52-4649-b624-90af8522bc3c
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: 65c4cc57-f753-41e7-9d82-0abf74822109
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: VARCHAR
         description: ""
-        name: ekko_revno
+        name: EKKO_SCMPROC
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: a0729bcf-9cb4-401e-8e3d-bfd86b0cd5b3
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.REVNO = ' ' THEN NULL ELSE EKKO.REVNO END
+              - columnCounter: 65c4cc57-f753-41e7-9d82-0abf74822109
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 77efb594-3d83-431d-9559-0df2cf8024a7
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: b2745376-9d85-4897-9bb7-a48231bf4e07
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: VARCHAR
         description: ""
-        name: ekko_scmproc
+        name: EKKO_SHIPCOND
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 9f5a3a4c-b094-4509-8f3e-c72d86f3417f
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.SCMPROC = ' ' THEN NULL ELSE EKKO.SCMPROC END
+              - columnCounter: b2745376-9d85-4897-9bb7-a48231bf4e07
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 2ab9bed8-ae3c-4f19-be65-aa4d7ba82b1a
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: a62126af-969b-4093-b6d8-56c3fe8ba5ee
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: VARCHAR
         description: ""
-        name: ekko_reason_code
+        name: EKKO_SPR_RSN_PROFILE
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 682f2c34-e537-427b-822e-38c71b871aba
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.REASON_CODE = ' ' THEN NULL ELSE EKKO.REASON_CODE END
+              - columnCounter: a62126af-969b-4093-b6d8-56c3fe8ba5ee
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 9741bd0b-78ac-4949-8d50-a7c6ab8c0a6a
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: 1652a354-710c-41ca-b2af-860e42289024
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: VARCHAR
         description: ""
-        name: ekko_memorytype
+        name: EKKO_SPRAS
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 9854a34c-0b3f-4c75-b94d-2ed4207f6e33
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.MEMORYTYPE = ' ' THEN NULL ELSE EKKO.MEMORYTYPE END
+              - columnCounter: 1652a354-710c-41ca-b2af-860e42289024
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 97b4baf8-b758-414c-8898-20694bbb1589
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: c3c43352-58bf-423c-9c5f-378f19e83955
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: VARCHAR
         description: ""
-        name: ekko_rettp
+        name: EKKO_STAKO
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 9aad277a-479c-4ffc-a61c-90dd3a1fda44
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.RETTP = ' ' THEN NULL ELSE EKKO.RETTP END
+              - columnCounter: c3c43352-58bf-423c-9c5f-378f19e83955
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 0697e617-579e-4f6f-abb3-b9d2da36008f
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: 93d31f46-ef74-42f2-a431-a92032f30c78
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_STCEG
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 93d31f46-ef74-42f2-a431-a92032f30c78
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3df25528-bde2-4833-9448-b2c3835507c3
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_STCEG_L
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3df25528-bde2-4833-9448-b2c3835507c3
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: df55c1d2-a013-4a6c-8ecd-e5e3d423ebf0
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_SUBMI
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: df55c1d2-a013-4a6c-8ecd-e5e3d423ebf0
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: aa0255ff-2b94-4d0d-aab9-8fb36e74c6de
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_T001_BUTXT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aa0255ff-2b94-4d0d-aab9-8fb36e74c6de
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6d613417-4406-4c99-b3ee-e3c9e30b106c
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_T024_EKNAM
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6d613417-4406-4c99-b3ee-e3c9e30b106c
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c726556d-399a-475d-ad18-a872cea6363c
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_T024E_EKOTX
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c726556d-399a-475d-ad18-a872cea6363c
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c4dc4708-d65c-49e5-9104-0534cac8ee5c
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_T161T_BATXT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c4dc4708-d65c-49e5-9104-0534cac8ee5c
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cec357-a190-4875-a331-4a9d415e51da
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_TELF1
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cec357-a190-4875-a331-4a9d415e51da
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0f3c4dff-6f0f-4c77-953d-17fa89887dd6
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: BOOLEAN
+        description: ""
+        name: EKKO_THRESHOLD_EXISTS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0f3c4dff-6f0f-4c77-953d-17fa89887dd6
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a337e604-5dda-40a1-8314-186c4abdd930
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_UNSEZ
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a337e604-5dda-40a1-8314-186c4abdd930
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5e7125c5-f3a2-499d-913e-d77c267b6aed
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_UPINC
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5e7125c5-f3a2-499d-913e-d77c267b6aed
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b769a7fe-a81c-4d4a-b981-0bad54a2a452
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_VERKF
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b769a7fe-a81c-4d4a-b981-0bad54a2a452
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4031705b-d67f-40cb-b1ea-d301b5f115ff
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_WAERS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4031705b-d67f-40cb-b1ea-d301b5f115ff
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a66cab1a-d32c-48b7-a12d-81e084457b91
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: DATE
+        description: ""
+        name: EKKO_WEAKT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a66cab1a-d32c-48b7-a12d-81e084457b91
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: aad903c5-5f79-4f5d-b5e9-106a0d0d3fe6
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: EKKO_WERKS_ALLOW
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aad903c5-5f79-4f5d-b5e9-106a0d0d3fe6
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 36798747-896c-44ba-a9bd-14687abd724b
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: NUMBER
         description: ""
-        name: ekko_retpc
+        name: EKKO_WKURS
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: a5ed0339-2653-4f2f-885a-85477880e21f
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CAST(EKKO.RETPC AS DECIMAL(5,2))
+              - columnCounter: 36798747-896c-44ba-a9bd-14687abd724b
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: c80e1f86-6eae-4a76-a92d-6bd24d30c309
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_dptyp
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 6acd14fd-301b-41cb-8864-d7feafd018b2
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.DPTYP = ' ' THEN NULL ELSE EKKO.DPTYP END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 38d9cd74-1dd2-4bc5-8c21-73242ffcf9c4
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: 767f8813-8f4c-4997-a7f0-f2f42071d056
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: NUMBER
         description: ""
-        name: ekko_dppct
+        name: EKKO_ZBD1P
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 78cec596-86e3-41da-8a40-78f1317b2245
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CAST(EKKO.DPPCT AS DECIMAL(5,2))
+              - columnCounter: 767f8813-8f4c-4997-a7f0-f2f42071d056
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 40a2b038-ff2a-46b2-aa21-c25e90953b02
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: 6a8a9e5f-db3a-4319-b555-34b3ec786906
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: NUMBER
         description: ""
-        name: ekko_dpamt
+        name: EKKO_ZBD1T
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: fc1ddb60-156a-4133-bfcd-332441868782
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CAST(EKKO.DPAMT AS DECIMAL(11,2))
+              - columnCounter: 6a8a9e5f-db3a-4319-b555-34b3ec786906
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 0b6637c4-aa3f-45e5-a288-be7d7902f5ba
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: TIMESTAMP
-        description: ""
-        name: ekko_dpdat
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 655e294b-93c9-456d-bc39-1378f11d8320
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CAST(TO_TIMESTAMP(DATEDIFF(SECOND, '1970-01-01'::DATE,TRY_TO_TIMESTAMP(EKKO.DPDAT,'YYYYMMDD'))) AS TIMESTAMP)
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: f6b59320-f2f0-46c8-ae1e-0676d5400be4
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_msr_id
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: f1cfdf59-a088-41d7-8f05-450a727a427e
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.MSR_ID = ' ' THEN NULL ELSE EKKO.MSR_ID END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 17f0fcb0-a339-4319-bbc4-5a0bac2137d3
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_hierarchy_exists
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 3bc91cc2-ab8e-4301-b1c1-1ae7b4f75732
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.HIERARCHY_EXISTS = ' ' THEN NULL ELSE EKKO.HIERARCHY_EXISTS END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 7da5d8bb-6a73-4e7a-a898-36fa693f8e0c
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_threshold_exists
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 7d690c9c-46f1-444b-8b1c-1ee207f5cff7
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.THRESHOLD_EXISTS = ' ' THEN NULL ELSE EKKO.THRESHOLD_EXISTS END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 57a37a4d-66e3-4682-96df-1d3368422ba0
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_legal_contract
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 0797f1d6-a1ae-46bc-b119-35df57a67ae1
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.LEGAL_CONTRACT = ' ' THEN NULL ELSE EKKO.LEGAL_CONTRACT END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: c53e9154-1caf-401e-8bee-92805b9346a0
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_description
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: b0b87bfc-5444-4ea2-bfd3-049c77cc5473
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.DESCRIPTION = ' ' THEN NULL ELSE EKKO.DESCRIPTION END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 2dcee9de-4bdb-4378-8ba5-883f9a0163ba
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: TIMESTAMP
-        description: ""
-        name: ekko_release_date
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 19ced2a2-5bf6-43e6-9c46-4eaf91760ff0
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CAST(TO_TIMESTAMP(DATEDIFF(SECOND, '1970-01-01'::DATE,TRY_TO_TIMESTAMP(EKKO.RELEASE_DATE,'YYYYMMDD'))) AS TIMESTAMP)
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 091e1f9b-e6b7-4fa9-8f6b-dcfad519913d
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_vsart
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 091e1f9b-e6b7-4fa9-8f6b-dcfad519913d
-                stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-            transform: CASE WHEN EKKO.VSART = ' ' THEN NULL ELSE EKKO.VSART END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: ca5dafcd-7b2a-40a4-8beb-0a6e73399f57
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_handoverloc
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: ca5dafcd-7b2a-40a4-8beb-0a6e73399f57
-                stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-            transform: CASE WHEN EKKO.HANDOVERLOC = ' ' THEN NULL ELSE EKKO.HANDOVERLOC END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 9170a141-5daa-4c70-baff-df3d835ab5a0
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_shipcond
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 9170a141-5daa-4c70-baff-df3d835ab5a0
-                stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-            transform: CASE WHEN EKKO.SHIPCOND = ' ' THEN NULL ELSE EKKO.SHIPCOND END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 4e758d78-0c83-4193-b45c-8506930c96d2
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_incov
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 4e758d78-0c83-4193-b45c-8506930c96d2
-                stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-            transform: CASE WHEN EKKO.INCOV = ' ' THEN NULL ELSE EKKO.INCOV END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: ffbe825a-d9d9-4e71-85a4-161e3adad9dc
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_inco2_l
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: ffbe825a-d9d9-4e71-85a4-161e3adad9dc
-                stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-            transform: CASE WHEN EKKO.INCO2_L = ' ' THEN NULL ELSE EKKO.INCO2_L END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: af27bd3d-906e-447e-a295-1aeda615ddc1
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_inco3_l
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: af27bd3d-906e-447e-a295-1aeda615ddc1
-                stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-            transform: CASE WHEN EKKO.INCO3_L = ' ' THEN NULL ELSE EKKO.INCO3_L END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: e835076c-6bf0-4e2b-a503-73501eb7e677
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_externalsystem
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: e835076c-6bf0-4e2b-a503-73501eb7e677
-                stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-            transform: CASE WHEN EKKO.EXTERNALSYSTEM = ' ' THEN NULL ELSE EKKO.EXTERNALSYSTEM END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 2e4841ed-f941-4138-a499-ed9d558afbc4
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_externalreferenceid
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 2e4841ed-f941-4138-a499-ed9d558afbc4
-                stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-            transform: CASE WHEN EKKO.EXTERNALREFERENCEID = ' ' THEN NULL ELSE EKKO.EXTERNALREFERENCEID END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 7ba82f4e-2f34-41ff-9b2d-0d381ef96431
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_force_id
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 8e213443-539a-4603-8cd0-79dad329a84a
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.FORCE_ID = ' ' THEN NULL ELSE EKKO.FORCE_ID END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 4d8f8855-e184-443b-adc6-426b3b78cc3e
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_force_cnt
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 5afa19f1-1e59-4cc4-9de2-94e53fb5225a
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.FORCE_CNT = '000000' THEN NULL ELSE EKKO.FORCE_CNT END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: d4291f20-1888-47fd-8f0b-71f641b825cf
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_reloc_id
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 9e9b33c0-7f58-45c3-a4b2-464f48b56a20
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.RELOC_ID = ' ' THEN NULL ELSE EKKO.RELOC_ID END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 5cbe00f4-f4f1-4f14-a857-758b9660d203
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_reloc_seq_id
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: c1673865-c45e-4b29-81fc-a091dd5c0503
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.RELOC_SEQ_ID = ' ' THEN NULL ELSE EKKO.RELOC_SEQ_ID END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 8c952e2c-b449-479b-a797-6799ce07158f
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_pohf_type
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: b59506da-fa21-4d07-9f9f-574c4defcfca
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.POHF_TYPE = ' ' THEN NULL ELSE EKKO.POHF_TYPE END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 4ff51cc8-b3dd-40b6-a6ed-f05c211866aa
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: TIMESTAMP
-        description: ""
-        name: ekko_eq_eindt
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 255b8657-a830-41b4-ba1e-abe130b0a11e
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CAST(TO_TIMESTAMP(DATEDIFF(SECOND, '1970-01-01'::DATE,TRY_TO_TIMESTAMP(EKKO.EQ_EINDT,'YYYYMMDD'))) AS TIMESTAMP)
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: a636272b-14aa-4f67-af0e-30a160b07b6a
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_eq_werks
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 3f42c510-6f38-419c-a64b-2b2a852dd36b
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.EQ_WERKS = ' ' THEN NULL ELSE EKKO.EQ_WERKS END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 5973fdd1-4339-4a1b-9345-0ae371147845
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_fixpo
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 8529ca7c-c965-4aaa-be90-8a67f424d28a
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.FIXPO = ' ' THEN NULL ELSE EKKO.FIXPO END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: c02af67a-dcf8-48fc-9454-1b51ec25ea4f
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_ekgrp_allow
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: e54ad08f-465b-417d-8329-29c983c1e1ee
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.EKGRP_ALLOW = ' ' THEN NULL ELSE EKKO.EKGRP_ALLOW END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 1099444c-b8f5-4abc-b427-3fe9738660cf
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_werks_allow
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 4e7894df-821f-4e1e-9e0f-31a0fd78cb15
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.WERKS_ALLOW = ' ' THEN NULL ELSE EKKO.WERKS_ALLOW END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: cdbcfbc0-61e9-436f-b0a7-d860d0f725ad
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_contract_allow
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: a11f5f12-76c3-4664-a2c3-616bb8eca19f
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.CONTRACT_ALLOW = ' ' THEN NULL ELSE EKKO.CONTRACT_ALLOW END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: cb3f6cbc-9723-478a-9b41-12124dcfd061
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_pstyp_allow
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 8e3aaa94-f7df-45cd-b0fa-49b6ec86bbbf
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.PSTYP_ALLOW = ' ' THEN NULL ELSE EKKO.PSTYP_ALLOW END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: ffdf8ba1-a702-4af2-96e1-dca6444799a0
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_fixpo_allow
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 55b2abbe-4715-48cf-bd33-4c09259cd216
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.FIXPO_ALLOW = ' ' THEN NULL ELSE EKKO.FIXPO_ALLOW END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 11efb0f3-8bf1-40d1-8791-4884a8c7b9b1
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_key_id_allow
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: ed34abd4-e24b-4979-898e-a420524ad439
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.KEY_ID_ALLOW = ' ' THEN NULL ELSE EKKO.KEY_ID_ALLOW END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 0366229d-96fc-456a-a521-8f928377dc6d
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_aurel_allow
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 214710c8-995c-4fd9-9262-49bd88a8a1fc
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.AUREL_ALLOW = ' ' THEN NULL ELSE EKKO.AUREL_ALLOW END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 93a03b29-c61a-4826-a50c-7db6c9cbb024
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_delper_allow
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: f67eb68c-12d7-4c86-b4fb-1f7c2db14a60
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.DELPER_ALLOW = ' ' THEN NULL ELSE EKKO.DELPER_ALLOW END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 00805adf-ac46-4a60-be20-b08d3be4ad0d
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_eindt_allow
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: fba89351-65cd-4b0d-947c-d780ceb84958
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.EINDT_ALLOW = ' ' THEN NULL ELSE EKKO.EINDT_ALLOW END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 03f277c6-25b1-4356-8c91-1edf1329820b
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_ltsnr_allow
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 03f277c6-25b1-4356-8c91-1edf1329820b
-                stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-            transform: CASE WHEN EKKO.LTSNR_ALLOW = ' ' THEN NULL ELSE EKKO.LTSNR_ALLOW END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 2220b090-9932-4250-b442-ab0e26506821
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_otb_level
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: b185f48f-4f93-4c96-89fc-134b80f3ad67
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.OTB_LEVEL = ' ' THEN NULL ELSE EKKO.OTB_LEVEL END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 59d5f243-52c3-42b3-9fb5-edb629f477e3
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_otb_cond_type
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: a305ad61-0fbb-4b15-acd8-aa7d95768275
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.OTB_COND_TYPE = ' ' THEN NULL ELSE EKKO.OTB_COND_TYPE END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: b8fe06cc-5ee3-4429-9b5c-aef263ef3f2e
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_key_id
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 63952603-ef3f-4e3e-ae42-a85cd5292532
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.KEY_ID = '0000000000000000' THEN NULL ELSE EKKO.KEY_ID END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: baabf2df-b655-4170-8fcd-384532b792ed
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: 8c0a716a-3d33-4d4e-a3ef-7308873ff72e
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: NUMBER
         description: ""
-        name: ekko_otb_value
+        name: EKKO_ZBD2P
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 3eb40b2d-eb5b-445a-ba58-aa74b8e7912e
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CAST(EKKO.OTB_VALUE AS DECIMAL(17,2))
+              - columnCounter: 8c0a716a-3d33-4d4e-a3ef-7308873ff72e
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 741d7e42-25d9-4a3d-acd3-63b54402c2f1
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_otb_curr
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 62ca157c-8574-4154-a927-54544d4214c3
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.OTB_CURR = ' ' THEN NULL ELSE EKKO.OTB_CURR END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: b5039def-3f66-40be-b03b-9bb04335a5d0
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: 36ac262c-d339-4c15-b02a-f60a485b8373
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: NUMBER
         description: ""
-        name: ekko_otb_res_value
+        name: EKKO_ZBD2T
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 41cae056-c11a-4278-b120-f04ff6353818
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CAST(EKKO.OTB_RES_VALUE AS DECIMAL(17,2))
+              - columnCounter: 36ac262c-d339-4c15-b02a-f60a485b8373
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: adb7d734-9d22-4097-a5ab-40491e67c0a7
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: 8b24b50f-0af8-48e8-bac9-02f89695b58e
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: NUMBER
         description: ""
-        name: ekko_otb_spec_value
+        name: EKKO_ZBD3T
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 4e9c37ba-518b-4466-8a6c-093aaf8d532f
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CAST(EKKO.OTB_SPEC_VALUE AS DECIMAL(17,2))
+              - columnCounter: 8b24b50f-0af8-48e8-bac9-02f89695b58e
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: eeeac851-a637-4906-8c45-7df69022f4d6
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
+          columnCounter: eec57f03-da1d-44cf-9649-8d385f517eda
+          stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         config: {}
         dataType: VARCHAR
         description: ""
-        name: ekko_spr_rsn_profile
+        name: EKKO_ZTERM
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 473d99ca-0f19-4811-85ad-0c59dfab2a77
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.SPR_RSN_PROFILE = ' ' THEN NULL ELSE EKKO.SPR_RSN_PROFILE END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 471d3426-f504-4cde-8286-aec2da5528ba
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_budg_type
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 6f6ea954-a69d-4472-84ea-7a2ee8aa166d
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.BUDG_TYPE = ' ' THEN NULL ELSE EKKO.BUDG_TYPE END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: ed19a84a-9777-4ce9-92ad-529498c39b23
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_otb_status
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 5e782ebd-54a0-418d-9d40-47afa56f76a4
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.OTB_STATUS = ' ' THEN NULL ELSE EKKO.OTB_STATUS END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 36d84431-879f-4d9a-90bc-6e6c10c6dfa2
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_otb_reason
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 293f3896-be46-41b8-b95c-9e426fb0d2d8
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.OTB_REASON = ' ' THEN NULL ELSE EKKO.OTB_REASON END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 0003daa5-71b1-4eb0-b042-b558d63b30b5
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_check_type
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: f292a31d-af4e-4d43-a66a-793cb157c026
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.CHECK_TYPE = ' ' THEN NULL ELSE EKKO.CHECK_TYPE END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 3e06f705-e3d7-4df1-bbc6-3eb6c0d1b022
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_con_otb_req
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: a1bfbd7c-85a7-48e0-af96-c58172e036bc
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.CON_OTB_REQ = ' ' THEN NULL ELSE EKKO.CON_OTB_REQ END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: d3e74f69-971e-4eb7-bfbe-cf09607ca5f3
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_con_prebook_lev
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: f22f839a-62b2-4142-81ad-48e55acaa366
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.CON_PREBOOK_LEV = ' ' THEN NULL ELSE EKKO.CON_PREBOOK_LEV END
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 6cb3b353-0c7f-4d66-aaab-560b65f1f325
-          stepCounter: a2c32102-32db-4dc2-9bb7-943bf533e863
-        config: {}
-        dataType: VARCHAR
-        description: ""
-        name: ekko_con_distr_lev
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 6c0ff730-ace4-4891-87fd-44b97079f745
-                stepCounter: 3ef81292-c248-43a1-aa40-e25bea99d048
-            transform: CASE WHEN EKKO.CON_DISTR_LEV = ' ' THEN NULL ELSE EKKO.CON_DISTR_LEV END
+              - columnCounter: eec57f03-da1d-44cf-9649-8d385f517eda
+                stepCounter: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
+            transform: ""
     cteString: ""
     description: ""
     destinationName: ""
@@ -1998,29 +1732,17 @@ operation:
     materializationOption: ""
     sourceMapping:
       - aliases:
-          EKKO: 3ef81292-c248-43a1-aa40-e25bea99d048
-          LFA1: 7595d307-cf7c-4e23-b4b1-ad9fb3982660
-          T001: 1772ecd2-1d44-4d24-b067-a7d6f9e281a2
+          STG_HDR: e43a285c-9a41-4ff0-bc1d-b533ed01c9c9
         customSQL:
           customSQL: ""
         dependencies:
-          - locationName: SRC_SAP
-            nodeName: EKKO
-          - locationName: SRC_SAP
-            nodeName: LFA1
-          - locationName: SRC_SAP
-            nodeName: T001
-          - locationName: SRC_SAP
-            nodeName: T024D
           - locationName: WORK
-            nodeName: STG_DD07T
+            nodeName: UNITY_SAP_EKKN_STG
           - locationName: WORK
-            nodeName: STG_T161T
-          - locationName: WORK
-            nodeName: STG_TINCT
+            nodeName: UNITY_SAP_PURCHASING_DOC_POS_STG
         join:
-          joinCondition: FROM {{ ref('SRC_SAP', 'EKKO') }} LEFT OUTER JOIN {{ ref('SRC_SAP', 'T001') }} ON EKKO.MANDT = T001.MANDT AND EKKO.BUKRS = T001.BUKRS LEFT OUTER JOIN {{ ref('WORK', 'STG_DD07T') }} AS DD07T ON EKKO.BSTYP = DD07T.DOMVALUE_L LEFT OUTER JOIN {{ ref('WORK', 'STG_T161T') }} AS T161T ON EKKO.MANDT = T161T.MANDT AND EKKO.BSART = T161T.BSART AND EKKO.BSTYP = T161T.BSTYP LEFT OUTER JOIN {{ ref('SRC_SAP', 'LFA1') }} ON EKKO.MANDT = LFA1.MANDT AND EKKO.LIFNR = LFA1.LIFNR LEFT OUTER JOIN {{ ref('SRC_SAP', 'T024D') }} AS T024E ON EKKO.MANDT = T024E.MANDT AND EKKO.EKORG = T024E.EKORG LEFT OUTER JOIN {{ ref('SRC_SAP', 'T024D') }} AS T024 ON EKKO.MANDT = T024.MANDT AND EKKO.EKGRP = T024.EKGRP LEFT OUTER JOIN {{ ref('WORK', 'STG_TINCT') }} AS TINCT ON EKKO.MANDT = TINCT.MANDT AND EKKO.INCO1 = TINCT.INCO1
-        name: UNITY_SAP_PURCHASING_DOC_HDR_STG
+          joinCondition: FROM {{ ref('WORK', 'UNITY_SAP_PURCHASING_DOC_POS_STG') }} STG_POS INNER JOIN {{ ref('WORK', 'UNITY_SAP_PURCHASING_DOC_HDR_STG') }} STG_HDR ON STG_POS.EKPO_MANDT = STG_HDR.EKKO_MANDT AND STG_POS.EKPO_EBELN = STG_HDR.EKKO_EBELN LEFT OUTER JOIN TCURX ON STG_HDR.EKKO_WAERS = TCURX.CURRKEY LEFT OUTER JOIN {{ ref('WORK', 'UNITY_SAP_EKKN_STG') }} EKKN_STG ON CONCAT_WS('~','5',STG_HDR.EKKO_MANDT,STG_POS.EKPO_EBELN,STG_POS.EKPO_EBELP)=EKKN_STG.PK_EKKN
+        name: STG_NODE
         noLinkRefs: []
   name: UNITY_SAP_PURCHASING_DOC_HDR_STG
   overrideSQL: false
